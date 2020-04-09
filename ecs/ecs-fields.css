@@ -1,0 +1,32 @@
+h1 {
+    margin: 10px;
+    text-align: center;
+}
+
+div.dataTables_filter {
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+}
+
+table.dataTable {
+    margin-top: 0px !important;
+}
+
+th {
+    white-space: nowrap;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.col-sm-12 {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
+table.dataTable.dtr-inline.collapsed>tbody>tr.parent>td:first-child:before {
+    background-color: grey;
+}
