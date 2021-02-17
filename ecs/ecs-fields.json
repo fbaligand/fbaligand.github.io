@@ -119,6 +119,106 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
+  "fieldName" : "client.as.number",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique number allocated to the autonomous system. The autonomous system number (ASN) uniquely identifies each network on the Internet.</p> <p>type: long</p> <p>example: <code class=\"literal\">15169</code></p>"
+}, {
+  "fieldName" : "client.as.organization.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+}, {
+  "fieldName" : "client.geo.city_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "client.geo.continent_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Name of the continent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">North America</code></p>"
+}, {
+  "fieldName" : "client.geo.country_iso_code",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA</code></p>"
+}, {
+  "fieldName" : "client.geo.country_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Canada</code></p>"
+}, {
+  "fieldName" : "client.geo.location",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Longitude and latitude.</p> <p>type: geo_point</p> <p>example: <code class=\"literal\">{ \"lon\": -73.614830, \"lat\": 45.505918 }</code></p>"
+}, {
+  "fieldName" : "client.geo.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
+}, {
+  "fieldName" : "client.geo.region_iso_code",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA-QC</code></p>"
+}, {
+  "fieldName" : "client.geo.region_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "client.user.domain",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.email",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.full_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "client.user.hash",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.id",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "client.user.roles",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "client.user.group.domain",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the group is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.group.id",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the group on the system/platform.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.group.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
   "fieldName" : "cloud.account.id",
   "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
   "fieldLevel" : "extended",
@@ -284,6 +384,106 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
+  "fieldName" : "destination.as.number",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique number allocated to the autonomous system. The autonomous system number (ASN) uniquely identifies each network on the Internet.</p> <p>type: long</p> <p>example: <code class=\"literal\">15169</code></p>"
+}, {
+  "fieldName" : "destination.as.organization.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+}, {
+  "fieldName" : "destination.geo.city_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "destination.geo.continent_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Name of the continent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">North America</code></p>"
+}, {
+  "fieldName" : "destination.geo.country_iso_code",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA</code></p>"
+}, {
+  "fieldName" : "destination.geo.country_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Canada</code></p>"
+}, {
+  "fieldName" : "destination.geo.location",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Longitude and latitude.</p> <p>type: geo_point</p> <p>example: <code class=\"literal\">{ \"lon\": -73.614830, \"lat\": 45.505918 }</code></p>"
+}, {
+  "fieldName" : "destination.geo.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
+}, {
+  "fieldName" : "destination.geo.region_iso_code",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA-QC</code></p>"
+}, {
+  "fieldName" : "destination.geo.region_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "destination.user.domain",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.email",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.full_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "destination.user.hash",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.id",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "destination.user.roles",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "destination.user.group.domain",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the group is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.group.id",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the group on the system/platform.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.group.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
   "fieldName" : "dll.name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "core",
@@ -293,6 +493,86 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Full file path of the library.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C:\\Windows\\System32\\kernel32.dll</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.exists",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.status",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Additional information about the certificate status.</p> <p>This is useful for logging cryptographic errors with the certificate validity or trust status. Leave unpopulated if the validity or trust of the certificate was unchecked.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">ERROR_UNTRUSTED_ROOT</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.subject_name",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.trusted",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Stores the trust status of the certificate chain.</p> <p>Validating the trust of the certificate chain may be complicated, and this field should only be populated by tools that actively check the status.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.valid",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Boolean to capture if the digital signature is verified against the binary content.</p> <p>Leave unpopulated if a certificate was unchecked.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "dll.hash.md5",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>MD5 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "dll.hash.sha1",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA1 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "dll.hash.sha256",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA256 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "dll.hash.sha512",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "dll.pe.architecture",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>CPU architecture target for the file.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">x64</code></p>"
+}, {
+  "fieldName" : "dll.pe.company",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal company name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "dll.pe.description",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal description of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Paint</code></p>"
+}, {
+  "fieldName" : "dll.pe.file_version",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
+}, {
+  "fieldName" : "dll.pe.imphash",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "dll.pe.original_file_name",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">MSPAINT.EXE</code></p>"
+}, {
+  "fieldName" : "dll.pe.product",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
 }, {
   "fieldName" : "dns.answers",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
@@ -644,6 +924,206 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The user ID (UID) or security identifier (SID) of the file owner.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1001</code></p>"
 }, {
+  "fieldName" : "file.code_signature.exists",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "file.code_signature.status",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Additional information about the certificate status.</p> <p>This is useful for logging cryptographic errors with the certificate validity or trust status. Leave unpopulated if the validity or trust of the certificate was unchecked.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">ERROR_UNTRUSTED_ROOT</code></p>"
+}, {
+  "fieldName" : "file.code_signature.subject_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "file.code_signature.trusted",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Stores the trust status of the certificate chain.</p> <p>Validating the trust of the certificate chain may be complicated, and this field should only be populated by tools that actively check the status.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "file.code_signature.valid",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Boolean to capture if the digital signature is verified against the binary content.</p> <p>Leave unpopulated if a certificate was unchecked.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "file.hash.md5",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>MD5 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.hash.sha1",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA1 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.hash.sha256",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA256 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.hash.sha512",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.pe.architecture",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>CPU architecture target for the file.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">x64</code></p>"
+}, {
+  "fieldName" : "file.pe.company",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal company name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "file.pe.description",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal description of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Paint</code></p>"
+}, {
+  "fieldName" : "file.pe.file_version",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
+}, {
+  "fieldName" : "file.pe.imphash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "file.pe.original_file_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">MSPAINT.EXE</code></p>"
+}, {
+  "fieldName" : "file.pe.product",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "file.x509.alternative_names",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of subject alternative names (SAN). Name types vary by certificate authority and certificate type but commonly contain IP addresses, DNS names (and wildcards), and email addresses.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">*.elastic.co</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.common_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of common name (CN) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example SHA2 High Assurance Server CA</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.country",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of country © codes</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">US</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.distinguished_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Distinguished name (DN) of issuing certificate authority.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C=US, O=Example Inc, OU=www.example.com, CN=Example SHA2 High Assurance Server CA</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.locality",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of locality names (L)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Mountain View</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.organization",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizations (O) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example Inc</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.organizational_unit",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizational units (OU) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">www.example.com</code></p>"
+}, {
+  "fieldName" : "file.x509.issuer.state_or_province",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of state or province names (ST, S, or P)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">California</code></p>"
+}, {
+  "fieldName" : "file.x509.not_after",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+}, {
+  "fieldName" : "file.x509.not_before",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+}, {
+  "fieldName" : "file.x509.public_key_algorithm",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Algorithm used to generate the public key.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">RSA</code></p>"
+}, {
+  "fieldName" : "file.x509.public_key_curve",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The curve used by the elliptic curve public key algorithm. This is algorithm specific.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">nistp521</code></p>"
+}, {
+  "fieldName" : "file.x509.public_key_exponent",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Exponent used to derive the public key. This is algorithm specific.</p> <p>type: long</p> <p>example: <code class=\"literal\">65537</code></p>"
+}, {
+  "fieldName" : "file.x509.public_key_size",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The size of the public key space in bits.</p> <p>type: long</p> <p>example: <code class=\"literal\">2048</code></p>"
+}, {
+  "fieldName" : "file.x509.serial_number",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+}, {
+  "fieldName" : "file.x509.signature_algorithm",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+}, {
+  "fieldName" : "file.x509.subject.common_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of common names (CN) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">shared.global.example.net</code></p>"
+}, {
+  "fieldName" : "file.x509.subject.country",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of country © code</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">US</code></p>"
+}, {
+  "fieldName" : "file.x509.subject.distinguished_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Distinguished name (DN) of the certificate subject entity.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C=US, ST=California, L=San Francisco, O=Example, Inc., CN=shared.global.example.net</code></p>"
+}, {
+  "fieldName" : "file.x509.subject.locality",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of locality names (L)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">San Francisco</code></p>"
+}, {
+  "fieldName" : "file.x509.subject.organization",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizations (O) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example, Inc.</code></p>"
+}, {
+  "fieldName" : "file.x509.subject.organizational_unit",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizational units (OU) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "file.x509.subject.state_or_province",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of state or province names (ST, S, or P)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">California</code></p>"
+}, {
+  "fieldName" : "file.x509.version_number",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Version of x509 format.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3</code></p>"
+}, {
   "fieldName" : "geo.city_name",
   "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
   "fieldLevel" : "core",
@@ -763,6 +1243,126 @@
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the host has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "host.geo.city_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "host.geo.continent_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Name of the continent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">North America</code></p>"
+}, {
+  "fieldName" : "host.geo.country_iso_code",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA</code></p>"
+}, {
+  "fieldName" : "host.geo.country_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Canada</code></p>"
+}, {
+  "fieldName" : "host.geo.location",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Longitude and latitude.</p> <p>type: geo_point</p> <p>example: <code class=\"literal\">{ \"lon\": -73.614830, \"lat\": 45.505918 }</code></p>"
+}, {
+  "fieldName" : "host.geo.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
+}, {
+  "fieldName" : "host.geo.region_iso_code",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA-QC</code></p>"
+}, {
+  "fieldName" : "host.geo.region_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "host.os.family",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>OS family (such as redhat, debian, freebsd, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">debian</code></p>"
+}, {
+  "fieldName" : "host.os.full",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+}, {
+  "fieldName" : "host.os.kernel",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system kernel version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">4.4.0-112-generic</code></p>"
+}, {
+  "fieldName" : "host.os.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+}, {
+  "fieldName" : "host.os.platform",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
+}, {
+  "fieldName" : "host.os.version",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10.14.1</code></p>"
+}, {
+  "fieldName" : "host.user.domain",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.email",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.full_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "host.user.hash",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.id",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "host.user.roles",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "host.user.group.domain",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the group is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.group.id",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the group on the system/platform.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.group.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "http.request.body.bytes",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
@@ -964,6 +1564,26 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>In the OSI Model this would be the Network Layer. ipv4, ipv6, ipsec, pim, etc</p> <p>The field value must be normalized to lowercase for querying. See the documentation section \"Implementing ECS\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">ipv4</code></p>"
 }, {
+  "fieldName" : "network.inner.vlan.id",
+  "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>VLAN ID as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10</code></p>"
+}, {
+  "fieldName" : "network.inner.vlan.name",
+  "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Optional VLAN name as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
+}, {
+  "fieldName" : "network.vlan.id",
+  "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>VLAN ID as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10</code></p>"
+}, {
+  "fieldName" : "network.vlan.name",
+  "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Optional VLAN name as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
+}, {
   "fieldName" : "observer.egress",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "extended",
@@ -1028,6 +1648,126 @@
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Observer version.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "observer.egress.interface.alias",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Interface alias as reported by the system, typically used in firewall implementations for e.g. inside, outside, or dmz logical interface naming.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
+}, {
+  "fieldName" : "observer.egress.interface.id",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Interface ID as reported by an observer (typically SNMP interface ID).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10</code></p>"
+}, {
+  "fieldName" : "observer.egress.interface.name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Interface name as reported by the system.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">eth0</code></p>"
+}, {
+  "fieldName" : "observer.egress.vlan.id",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>VLAN ID as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10</code></p>"
+}, {
+  "fieldName" : "observer.egress.vlan.name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Optional VLAN name as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
+}, {
+  "fieldName" : "observer.geo.city_name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "observer.geo.continent_name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Name of the continent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">North America</code></p>"
+}, {
+  "fieldName" : "observer.geo.country_iso_code",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA</code></p>"
+}, {
+  "fieldName" : "observer.geo.country_name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Canada</code></p>"
+}, {
+  "fieldName" : "observer.geo.location",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Longitude and latitude.</p> <p>type: geo_point</p> <p>example: <code class=\"literal\">{ \"lon\": -73.614830, \"lat\": 45.505918 }</code></p>"
+}, {
+  "fieldName" : "observer.geo.name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
+}, {
+  "fieldName" : "observer.geo.region_iso_code",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA-QC</code></p>"
+}, {
+  "fieldName" : "observer.geo.region_name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "observer.ingress.interface.alias",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Interface alias as reported by the system, typically used in firewall implementations for e.g. inside, outside, or dmz logical interface naming.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
+}, {
+  "fieldName" : "observer.ingress.interface.id",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Interface ID as reported by an observer (typically SNMP interface ID).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10</code></p>"
+}, {
+  "fieldName" : "observer.ingress.interface.name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Interface name as reported by the system.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">eth0</code></p>"
+}, {
+  "fieldName" : "observer.ingress.vlan.id",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>VLAN ID as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10</code></p>"
+}, {
+  "fieldName" : "observer.ingress.vlan.name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Optional VLAN name as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
+}, {
+  "fieldName" : "observer.os.family",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>OS family (such as redhat, debian, freebsd, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">debian</code></p>"
+}, {
+  "fieldName" : "observer.os.full",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+}, {
+  "fieldName" : "observer.os.kernel",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system kernel version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">4.4.0-112-generic</code></p>"
+}, {
+  "fieldName" : "observer.os.name",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+}, {
+  "fieldName" : "observer.os.platform",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
+}, {
+  "fieldName" : "observer.os.version",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10.14.1</code></p>"
 }, {
   "fieldName" : "organization.id",
   "fieldSet" : "<abbr title='Fields describing the organization or company the event is associated with.'>Organization</abbr>",
@@ -1249,6 +1989,166 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.working_directory.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice</code></p>"
 }, {
+  "fieldName" : "process.code_signature.exists",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "process.code_signature.status",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Additional information about the certificate status.</p> <p>This is useful for logging cryptographic errors with the certificate validity or trust status. Leave unpopulated if the validity or trust of the certificate was unchecked.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">ERROR_UNTRUSTED_ROOT</code></p>"
+}, {
+  "fieldName" : "process.code_signature.subject_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "process.code_signature.trusted",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Stores the trust status of the certificate chain.</p> <p>Validating the trust of the certificate chain may be complicated, and this field should only be populated by tools that actively check the status.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "process.code_signature.valid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Boolean to capture if the digital signature is verified against the binary content.</p> <p>Leave unpopulated if a certificate was unchecked.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "process.hash.md5",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>MD5 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.hash.sha1",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA1 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.hash.sha256",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA256 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.hash.sha512",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.parent.args",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of process arguments, starting with the absolute path to the executable.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"/usr/bin/ssh\", \"-l\", \"user\", \"10.0.0.16\"]</code></p>"
+}, {
+  "fieldName" : "process.parent.args_count",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Length of the process.args array.</p> <p>This field can be useful for querying or performing bucket analysis on how many arguments were provided to start a process. More arguments may be an indication of suspicious activity.</p> <p>type: long</p> <p>example: <code class=\"literal\">4</code></p>"
+}, {
+  "fieldName" : "process.parent.command_line",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Full command line that started the process, including the absolute path to the executable, and all arguments.</p> <p>Some arguments may be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.command_line.text (type: text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh -l user 10.0.0.16</code></p>"
+}, {
+  "fieldName" : "process.parent.entity_id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the process.</p> <p>The implementation of this is specified by the data source, but some examples of what could be used here are a process-generated UUID, Sysmon Process GUIDs, or a hash of some uniquely identifying components of a process.</p> <p>Constructing a globally unique identifier is a common practice to mitigate PID reuse as well as to identify a specific process over time, across multiple monitored hosts.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">c2c455d9f99375d</code></p>"
+}, {
+  "fieldName" : "process.parent.executable",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Absolute path to the process executable.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.executable.text (type: text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh</code></p>"
+}, {
+  "fieldName" : "process.parent.exit_code",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The exit code of the process, if this is a termination event.</p> <p>The field should be absent if there is no exit code for the event (e.g. process start).</p> <p>type: long</p> <p>example: <code class=\"literal\">137</code></p>"
+}, {
+  "fieldName" : "process.parent.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Process name.</p> <p>Sometimes called program name or similar.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.name.text (type: text)</p> <p>example: <code class=\"literal\">ssh</code></p>"
+}, {
+  "fieldName" : "process.parent.pgid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Identifier of the group of processes the process belongs to.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.parent.pid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Process id.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
+  "fieldName" : "process.parent.ppid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Parent process' pid.</p> <p>type: long</p> <p>example: <code class=\"literal\">4241</code></p>"
+}, {
+  "fieldName" : "process.parent.start",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The time the process started.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.853Z</code></p>"
+}, {
+  "fieldName" : "process.parent.thread.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Thread ID.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
+  "fieldName" : "process.parent.thread.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Thread name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">thread-0</code></p>"
+}, {
+  "fieldName" : "process.parent.title",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Process title.</p> <p>The proctitle, some times the same as process name. Can also be different: for example a browser setting its title to the web page currently opened.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.title.text (type: text)</p>"
+}, {
+  "fieldName" : "process.parent.uptime",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "process.parent.working_directory",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.working_directory.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice</code></p>"
+}, {
+  "fieldName" : "process.pe.architecture",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>CPU architecture target for the file.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">x64</code></p>"
+}, {
+  "fieldName" : "process.pe.company",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal company name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "process.pe.description",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal description of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Paint</code></p>"
+}, {
+  "fieldName" : "process.pe.file_version",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
+}, {
+  "fieldName" : "process.pe.imphash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "process.pe.original_file_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">MSPAINT.EXE</code></p>"
+}, {
+  "fieldName" : "process.pe.product",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
   "fieldName" : "registry.data.bytes",
   "fieldSet" : "<abbr title='Fields related to Windows Registry operations.'>Registry</abbr>",
   "fieldLevel" : "extended",
@@ -1414,6 +2314,106 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
+  "fieldName" : "server.as.number",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique number allocated to the autonomous system. The autonomous system number (ASN) uniquely identifies each network on the Internet.</p> <p>type: long</p> <p>example: <code class=\"literal\">15169</code></p>"
+}, {
+  "fieldName" : "server.as.organization.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+}, {
+  "fieldName" : "server.geo.city_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "server.geo.continent_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Name of the continent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">North America</code></p>"
+}, {
+  "fieldName" : "server.geo.country_iso_code",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA</code></p>"
+}, {
+  "fieldName" : "server.geo.country_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Canada</code></p>"
+}, {
+  "fieldName" : "server.geo.location",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Longitude and latitude.</p> <p>type: geo_point</p> <p>example: <code class=\"literal\">{ \"lon\": -73.614830, \"lat\": 45.505918 }</code></p>"
+}, {
+  "fieldName" : "server.geo.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
+}, {
+  "fieldName" : "server.geo.region_iso_code",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA-QC</code></p>"
+}, {
+  "fieldName" : "server.geo.region_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "server.user.domain",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.email",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.full_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "server.user.hash",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.id",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "server.user.roles",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "server.user.group.domain",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the group is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.group.id",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the group on the system/platform.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.group.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
   "fieldName" : "service.ephemeral_id",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
   "fieldLevel" : "extended",
@@ -1508,6 +2508,106 @@
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+}, {
+  "fieldName" : "source.as.number",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique number allocated to the autonomous system. The autonomous system number (ASN) uniquely identifies each network on the Internet.</p> <p>type: long</p> <p>example: <code class=\"literal\">15169</code></p>"
+}, {
+  "fieldName" : "source.as.organization.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+}, {
+  "fieldName" : "source.geo.city_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "source.geo.continent_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Name of the continent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">North America</code></p>"
+}, {
+  "fieldName" : "source.geo.country_iso_code",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA</code></p>"
+}, {
+  "fieldName" : "source.geo.country_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Country name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Canada</code></p>"
+}, {
+  "fieldName" : "source.geo.location",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Longitude and latitude.</p> <p>type: geo_point</p> <p>example: <code class=\"literal\">{ \"lon\": -73.614830, \"lat\": 45.505918 }</code></p>"
+}, {
+  "fieldName" : "source.geo.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
+}, {
+  "fieldName" : "source.geo.region_iso_code",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region ISO code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CA-QC</code></p>"
+}, {
+  "fieldName" : "source.geo.region_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "source.user.domain",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.email",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.full_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "source.user.hash",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.id",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "source.user.roles",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "source.user.group.domain",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the group is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.group.id",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the group on the system/platform.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.group.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "threat.framework",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -1704,6 +2804,246 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Normalized lowercase protocol name parsed from original string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">tls</code></p>"
 }, {
+  "fieldName" : "tls.client.x509.alternative_names",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of subject alternative names (SAN). Name types vary by certificate authority and certificate type but commonly contain IP addresses, DNS names (and wildcards), and email addresses.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">*.elastic.co</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.common_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of common name (CN) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example SHA2 High Assurance Server CA</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.country",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of country © codes</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">US</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.distinguished_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Distinguished name (DN) of issuing certificate authority.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C=US, O=Example Inc, OU=www.example.com, CN=Example SHA2 High Assurance Server CA</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.locality",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of locality names (L)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Mountain View</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.organization",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizations (O) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example Inc</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.organizational_unit",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizational units (OU) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">www.example.com</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.issuer.state_or_province",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of state or province names (ST, S, or P)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">California</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.not_after",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.not_before",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.public_key_algorithm",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Algorithm used to generate the public key.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">RSA</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.public_key_curve",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The curve used by the elliptic curve public key algorithm. This is algorithm specific.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">nistp521</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.public_key_exponent",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Exponent used to derive the public key. This is algorithm specific.</p> <p>type: long</p> <p>example: <code class=\"literal\">65537</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.public_key_size",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The size of the public key space in bits.</p> <p>type: long</p> <p>example: <code class=\"literal\">2048</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.serial_number",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.signature_algorithm",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.common_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of common names (CN) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">shared.global.example.net</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.country",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of country © code</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">US</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.distinguished_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Distinguished name (DN) of the certificate subject entity.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C=US, ST=California, L=San Francisco, O=Example, Inc., CN=shared.global.example.net</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.locality",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of locality names (L)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">San Francisco</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.organization",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizations (O) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example, Inc.</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.organizational_unit",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizational units (OU) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "tls.client.x509.subject.state_or_province",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of state or province names (ST, S, or P)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">California</code></p>"
+}, {
+  "fieldName" : "tls.client.x509.version_number",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Version of x509 format.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.alternative_names",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of subject alternative names (SAN). Name types vary by certificate authority and certificate type but commonly contain IP addresses, DNS names (and wildcards), and email addresses.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">*.elastic.co</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.common_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of common name (CN) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example SHA2 High Assurance Server CA</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.country",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of country © codes</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">US</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.distinguished_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Distinguished name (DN) of issuing certificate authority.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C=US, O=Example Inc, OU=www.example.com, CN=Example SHA2 High Assurance Server CA</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.locality",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of locality names (L)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Mountain View</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.organization",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizations (O) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example Inc</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.organizational_unit",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizational units (OU) of issuing certificate authority.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">www.example.com</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.issuer.state_or_province",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of state or province names (ST, S, or P)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">California</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.not_after",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.not_before",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.public_key_algorithm",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Algorithm used to generate the public key.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">RSA</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.public_key_curve",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The curve used by the elliptic curve public key algorithm. This is algorithm specific.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">nistp521</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.public_key_exponent",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Exponent used to derive the public key. This is algorithm specific.</p> <p>type: long</p> <p>example: <code class=\"literal\">65537</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.public_key_size",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The size of the public key space in bits.</p> <p>type: long</p> <p>example: <code class=\"literal\">2048</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.serial_number",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.signature_algorithm",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.common_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of common names (CN) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">shared.global.example.net</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.country",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of country © code</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">US</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.distinguished_name",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Distinguished name (DN) of the certificate subject entity.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C=US, ST=California, L=San Francisco, O=Example, Inc., CN=shared.global.example.net</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.locality",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of locality names (L)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">San Francisco</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.organization",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizations (O) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Example, Inc.</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.organizational_unit",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of organizational units (OU) of subject.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "tls.server.x509.subject.state_or_province",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of state or province names (ST, S, or P)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">California</code></p>"
+}, {
+  "fieldName" : "tls.server.x509.version_number",
+  "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Version of x509 format.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3</code></p>"
+}, {
   "fieldName" : "span.id",
   "fieldSet" : "<abbr title='Fields related to distributed tracing.'>Tracing</abbr>",
   "fieldLevel" : "extended",
@@ -1727,7 +3067,7 @@
   "fieldName" : "url.extension",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The field contains the file extension from the original request url.</p> <p>The file extension is only set if it exists, as not every url has a file extension.</p> <p>The leading period must not be included. For example, the value must be \"png\", not \".png\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">png</code></p>"
+  "fieldDescription" : "<p>The field contains the file extension from the original request url, excluding the leading dot.</p> <p>The file extension is only set if it exists, as not every url has a file extension.</p> <p>The leading period must not be included. For example, the value must be \"png\", not \".png\".</p> <p>Note that when the file name has multiple extensions (example.tar.gz), only the last one should be captured (\"gz\", not \"tar.gz\").</p> <p>type: keyword</p> <p>example: <code class=\"literal\">png</code></p>"
 }, {
   "fieldName" : "url.fragment",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
@@ -1824,6 +3164,21 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "user.group.domain",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the group is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.group.id",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the group on the system/platform.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.group.name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
   "fieldName" : "user_agent.device.name",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
   "fieldLevel" : "extended",
@@ -1843,6 +3198,36 @@
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Version of the user agent.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">12.0</code></p>"
+}, {
+  "fieldName" : "user_agent.os.family",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>OS family (such as redhat, debian, freebsd, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">debian</code></p>"
+}, {
+  "fieldName" : "user_agent.os.full",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+}, {
+  "fieldName" : "user_agent.os.kernel",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system kernel version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">4.4.0-112-generic</code></p>"
+}, {
+  "fieldName" : "user_agent.os.name",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+}, {
+  "fieldName" : "user_agent.os.platform",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
+}, {
+  "fieldName" : "user_agent.os.version",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Operating system version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10.14.1</code></p>"
 }, {
   "fieldName" : "vlan.id",
   "fieldSet" : "<abbr title='Fields to describe observed VLAN information.'>VLAN</abbr>",
