@@ -204,6 +204,76 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "client.user.changes.domain",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.changes.email",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.changes.full_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "client.user.changes.hash",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.changes.id",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.changes.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "client.user.changes.roles",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "client.user.effective.domain",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.effective.email",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.effective.full_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "client.user.effective.hash",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.effective.id",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.effective.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "client.user.effective.roles",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
   "fieldName" : "client.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
@@ -218,6 +288,41 @@
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.target.domain",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.target.email",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.target.full_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "client.user.target.hash",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.target.id",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "client.user.target.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "client.user.target.roles",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
   "fieldName" : "cloud.account.id",
   "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
@@ -469,6 +574,76 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "destination.user.changes.domain",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.changes.email",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.changes.full_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "destination.user.changes.hash",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.changes.id",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.changes.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "destination.user.changes.roles",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "destination.user.effective.domain",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.effective.email",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.effective.full_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "destination.user.effective.hash",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.effective.id",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.effective.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "destination.user.effective.roles",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
   "fieldName" : "destination.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
@@ -483,6 +658,41 @@
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.target.domain",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.target.email",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.target.full_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "destination.user.target.hash",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.target.id",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "destination.user.target.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "destination.user.target.roles",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
   "fieldName" : "dll.name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -702,7 +912,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, web</p> <p>To learn more about when to use which value, visit the page <a class=\"xref\" href=\"ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, web</p> <p>To learn more about when to use which value, visit the page <a class=\"xref\" href=\"ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -757,7 +967,7 @@
   "fieldName" : "event.original",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Raw text message of entire event. Used to demonstrate log integrity.</p> <p>This field is not indexed and doc_values are disabled. It cannot be searched, but it can be retrieved from <code class=\"literal\">_source</code>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Sep 19 08:26:10 host CEF:0&amp;#124;Security&amp;#124; threatmanager&amp;#124;1.0&amp;#124;100&amp;#124; worm successfully stopped&amp;#124;10&amp;#124;src=10.0.0.1 dst=2.1.2.2spt=1232</code></p>"
+  "fieldDescription" : "<p>Raw text message of entire event. Used to demonstrate log integrity.</p> <p>This field is not indexed and doc_values are disabled. It cannot be searched, but it can be retrieved from <code class=\"literal\">_source</code>. If users wish to override this and index this field, consider using the wildcard data type.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Sep 19 08:26:10 host CEF:0&amp;#124;Security&amp;#124; threatmanager&amp;#124;1.0&amp;#124;100&amp;#124; worm successfully stopped&amp;#124;10&amp;#124;src=10.0.0.1 dst=2.1.2.2spt=1232</code></p>"
 }, {
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -777,7 +987,7 @@
   "fieldName" : "event.reference",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Reference URL linking to additional information about this event.</p> <p>This URL links to a static definition of the this event. Alert events, indicated by <code class=\"literal\">event.kind:alert</code>, are a common use case for this field.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">https://system.example.com/event/#0001234</code></p>"
+  "fieldDescription" : "<p>Reference URL linking to additional information about this event.</p> <p>This URL links to a static definition of this event. Alert events, indicated by <code class=\"literal\">event.kind:alert</code>, are a common use case for this field.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">https://system.example.com/event/#0001234</code></p>"
 }, {
   "fieldName" : "event.risk_score",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1309,6 +1519,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
 }, {
+  "fieldName" : "host.os.type",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Use the <code class=\"literal\">os.type</code> field to categorize the operating system into one of the broad commercial families.</p> <p>One of these following values should be used (lowercase): linux, macos, unix, windows.</p> <p>If the OS you’re dealing with is not in the list, the field should not be populated. Please let us know by opening an issue with ECS, to propose its addition.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">macos</code></p>"
+}, {
   "fieldName" : "host.os.version",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
@@ -1349,6 +1564,76 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "host.user.changes.domain",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.changes.email",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.changes.full_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "host.user.changes.hash",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.changes.id",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.changes.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "host.user.changes.roles",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "host.user.effective.domain",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.effective.email",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.effective.full_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "host.user.effective.hash",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.effective.id",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.effective.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "host.user.effective.roles",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
   "fieldName" : "host.user.group.domain",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
@@ -1363,6 +1648,41 @@
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.target.domain",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.target.email",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.target.full_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "host.user.target.hash",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.target.id",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.user.target.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "host.user.target.roles",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
   "fieldName" : "http.request.body.bytes",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
@@ -1764,6 +2084,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
 }, {
+  "fieldName" : "observer.os.type",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Use the <code class=\"literal\">os.type</code> field to categorize the operating system into one of the broad commercial families.</p> <p>One of these following values should be used (lowercase): linux, macos, unix, windows.</p> <p>If the OS you’re dealing with is not in the list, the field should not be populated. Please let us know by opening an issue with ECS, to propose its addition.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">macos</code></p>"
+}, {
   "fieldName" : "observer.os.version",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "extended",
@@ -1803,6 +2128,11 @@
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
+}, {
+  "fieldName" : "os.type",
+  "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Use the <code class=\"literal\">os.type</code> field to categorize the operating system into one of the broad commercial families.</p> <p>One of these following values should be used (lowercase): linux, macos, unix, windows.</p> <p>If the OS you’re dealing with is not in the list, the field should not be populated. Please let us know by opening an issue with ECS, to propose its addition.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">macos</code></p>"
 }, {
   "fieldName" : "os.version",
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
@@ -2399,6 +2729,76 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "server.user.changes.domain",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.changes.email",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.changes.full_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "server.user.changes.hash",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.changes.id",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.changes.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "server.user.changes.roles",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "server.user.effective.domain",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.effective.email",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.effective.full_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "server.user.effective.hash",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.effective.id",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.effective.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "server.user.effective.roles",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
   "fieldName" : "server.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
@@ -2413,6 +2813,41 @@
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.target.domain",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.target.email",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.target.full_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "server.user.target.hash",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.target.id",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "server.user.target.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "server.user.target.roles",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
   "fieldName" : "service.ephemeral_id",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
@@ -2594,6 +3029,76 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "source.user.changes.domain",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.changes.email",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.changes.full_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "source.user.changes.hash",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.changes.id",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.changes.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "source.user.changes.roles",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "source.user.effective.domain",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.effective.email",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.effective.full_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "source.user.effective.hash",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.effective.id",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.effective.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "source.user.effective.roles",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
   "fieldName" : "source.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
@@ -2608,6 +3113,41 @@
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.target.domain",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.target.email",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.target.full_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "source.user.target.hash",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.target.id",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "source.user.target.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "source.user.target.roles",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
   "fieldName" : "threat.framework",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -3062,7 +3602,7 @@
   "fieldName" : "url.domain",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Domain of the url, such as \"www.elastic.co\".</p> <p>In some cases a URL may refer to an IP and/or port directly, without a domain name. In this case, the IP address would go to the <code class=\"literal\">domain</code> field.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">www.elastic.co</code></p>"
+  "fieldDescription" : "<p>Domain of the url, such as \"www.elastic.co\".</p> <p>In some cases a URL may refer to an IP and/or port directly, without a domain name. In this case, the IP address would go to the <code class=\"literal\">domain</code> field.</p> <p>If the URL contains a literal IPv6 address enclosed by <code class=\"literal\">[</code> and <code class=\"literal\">]</code> (IETF RFC 2732), the <code class=\"literal\">[</code> and <code class=\"literal\">]</code> characters should also be captured in the <code class=\"literal\">domain</code> field.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">www.elastic.co</code></p>"
 }, {
   "fieldName" : "url.extension",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
@@ -3164,6 +3704,76 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "user.changes.domain",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.changes.email",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.changes.full_name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "user.changes.hash",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.changes.id",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.changes.name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "user.changes.roles",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "user.effective.domain",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.effective.email",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.effective.full_name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "user.effective.hash",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.effective.id",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.effective.name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "user.effective.roles",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
   "fieldName" : "user.group.domain",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
@@ -3178,6 +3788,41 @@
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.target.domain",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the directory the user is a member of.</p> <p>For example, an LDAP or Active Directory domain name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.target.email",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User email address.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.target.full_name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+}, {
+  "fieldName" : "user.target.hash",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique user hash to correlate information for a user in anonymized form.</p> <p>Useful if <code class=\"literal\">user.id</code> or <code class=\"literal\">user.name</code> contain confidential information and cannot be used.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.target.id",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "user.target.name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+}, {
+  "fieldName" : "user.target.roles",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
   "fieldName" : "user_agent.device.name",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
@@ -3223,6 +3868,11 @@
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Operating system platform (such centos, ubuntu, windows).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">darwin</code></p>"
+}, {
+  "fieldName" : "user_agent.os.type",
+  "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Use the <code class=\"literal\">os.type</code> field to categorize the operating system into one of the broad commercial families.</p> <p>One of these following values should be used (lowercase): linux, macos, unix, windows.</p> <p>If the OS you’re dealing with is not in the list, the field should not be populated. Please let us know by opening an issue with ECS, to propose its addition.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">macos</code></p>"
 }, {
   "fieldName" : "user_agent.os.version",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
