@@ -82,7 +82,7 @@
   "fieldName" : "client.mac",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>MAC address of the client.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>MAC address of the client.</p> <p>The notation format from RFC 7042 is suggested: Each octet (that is, 8-bit byte) is represented by two [uppercase] hexadecimal digits giving the value of the octet as an unsigned integer. Successive octets are separated by a hyphen.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00-00-5E-00-53-23</code></p>"
 }, {
   "fieldName" : "client.nat.ip",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -134,6 +134,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
 }, {
+  "fieldName" : "client.geo.continent_code",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
+}, {
   "fieldName" : "client.geo.continent_name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
@@ -159,6 +164,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "client.geo.postal_code",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "client.geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
@@ -168,6 +178,11 @@
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "client.geo.timezone",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "client.user.domain",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -374,10 +389,20 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Region in which this host is running.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">us-east-1</code></p>"
 }, {
+  "fieldName" : "cloud.service.name",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The cloud service name is intended to distinguish services running on different platforms within a provider, eg AWS EC2 vs Lambda, GCP GCE vs App Engine, Azure VM vs App Server.</p> <p>Examples: app engine, app service, cloud run, fargate, lambda.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">lambda</code></p>"
+}, {
   "fieldName" : "code_signature.exists",
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "code_signature.signing_id",
+  "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The identifier used to sign the process.</p> <p>This is used to identify the application manufactured by a software vendor. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">com.apple.xpc.proxy</code></p>"
 }, {
   "fieldName" : "code_signature.status",
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
@@ -388,6 +413,11 @@
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "code_signature.team_id",
+  "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
 }, {
   "fieldName" : "code_signature.trusted",
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
@@ -452,7 +482,7 @@
   "fieldName" : "destination.mac",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>MAC address of the destination.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>MAC address of the destination.</p> <p>The notation format from RFC 7042 is suggested: Each octet (that is, 8-bit byte) is represented by two [uppercase] hexadecimal digits giving the value of the octet as an unsigned integer. Successive octets are separated by a hyphen.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00-00-5E-00-53-23</code></p>"
 }, {
   "fieldName" : "destination.nat.ip",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -504,6 +534,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
 }, {
+  "fieldName" : "destination.geo.continent_code",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
+}, {
   "fieldName" : "destination.geo.continent_name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
@@ -529,6 +564,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "destination.geo.postal_code",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "destination.geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
@@ -538,6 +578,11 @@
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "destination.geo.timezone",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "destination.user.domain",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -709,6 +754,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
 }, {
+  "fieldName" : "dll.code_signature.signing_id",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The identifier used to sign the process.</p> <p>This is used to identify the application manufactured by a software vendor. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">com.apple.xpc.proxy</code></p>"
+}, {
   "fieldName" : "dll.code_signature.status",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
@@ -718,6 +768,11 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.team_id",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
 }, {
   "fieldName" : "dll.code_signature.trusted",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -748,6 +803,11 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "dll.hash.ssdeep",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SSDEEP hash.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "dll.pe.architecture",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -1139,6 +1199,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
 }, {
+  "fieldName" : "file.code_signature.signing_id",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The identifier used to sign the process.</p> <p>This is used to identify the application manufactured by a software vendor. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">com.apple.xpc.proxy</code></p>"
+}, {
   "fieldName" : "file.code_signature.status",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
@@ -1148,6 +1213,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "file.code_signature.team_id",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
 }, {
   "fieldName" : "file.code_signature.trusted",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1178,6 +1248,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.hash.ssdeep",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SSDEEP hash.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "file.pe.architecture",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1339,6 +1414,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
 }, {
+  "fieldName" : "geo.continent_code",
+  "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
+}, {
   "fieldName" : "geo.continent_name",
   "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
   "fieldLevel" : "core",
@@ -1364,6 +1444,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "geo.postal_code",
+  "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
   "fieldLevel" : "core",
@@ -1373,6 +1458,11 @@
   "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "geo.timezone",
+  "fieldSet" : "<abbr title='Fields describing a location.'>Geo</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "group.domain",
   "fieldSet" : "<abbr title='User’s group relevant to the event.'>Group</abbr>",
@@ -1409,10 +1499,30 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "hash.ssdeep",
+  "fieldSet" : "<abbr title='Hashes, usually file hashes.'>Hash</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SSDEEP hash.</p> <p>type: keyword</p>"
+}, {
   "fieldName" : "host.architecture",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Operating system architecture.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">x86_64</code></p>"
+}, {
+  "fieldName" : "host.cpu.usage",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1.</p> <p>Scaling factor: 1000.</p> <p>For example: For a two core host, this value should be the average of the two cores, between 0 and 1.</p> <p>type: scaled_float</p>"
+}, {
+  "fieldName" : "host.disk.read.bytes",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The total number of bytes (gauge) read successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "host.disk.write.bytes",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The total number of bytes (gauge) written successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.domain",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1437,12 +1547,32 @@
   "fieldName" : "host.mac",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Host mac addresses.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>Host MAC addresses.</p> <p>The notation format from RFC 7042 is suggested: Each octet (that is, 8-bit byte) is represented by two [uppercase] hexadecimal digits giving the value of the octet as an unsigned integer. Successive octets are separated by a hyphen.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"00-00-5E-00-53-23\", \"00-00-5E-00-53-24\"]</code></p>"
 }, {
   "fieldName" : "host.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Name of the host.</p> <p>It can contain what <code class=\"literal\">hostname</code> returns on Unix systems, the fully qualified domain name, or a name specified by the user. The sender decides which value to use.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "host.network.egress.bytes",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of bytes (gauge) sent out on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "host.network.egress.packets",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of packets (gauge) sent out on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "host.network.ingress.bytes",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of bytes received (gauge) on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "host.network.ingress.packets",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of packets (gauge) received on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.type",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1458,6 +1588,11 @@
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
+}, {
+  "fieldName" : "host.geo.continent_code",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
 }, {
   "fieldName" : "host.geo.continent_name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1484,6 +1619,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "host.geo.postal_code",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "host.geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
@@ -1493,6 +1633,11 @@
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "host.geo.timezone",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "host.os.family",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1698,6 +1843,11 @@
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Total size in bytes of the request (body and headers).</p> <p>type: long</p> <p>example: <code class=\"literal\">1437</code></p>"
+}, {
+  "fieldName" : "http.request.id",
+  "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A unique identifier for each HTTP request to correlate logs between clients and servers in transactions.</p> <p>The id may be contained in a non-standard HTTP header, such as <code class=\"literal\">X-Request-ID</code> or <code class=\"literal\">X-Correlation-ID</code>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">123e4567-e89b-12d3-a456-426614174000</code></p>"
 }, {
   "fieldName" : "http.request.method",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
@@ -1937,7 +2087,7 @@
   "fieldName" : "observer.mac",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>MAC addresses of the observer</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>MAC addresses of the observer.</p> <p>The notation format from RFC 7042 is suggested: Each octet (that is, 8-bit byte) is represented by two [uppercase] hexadecimal digits giving the value of the octet as an unsigned integer. Successive octets are separated by a hyphen.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"00-00-5E-00-53-23\", \"00-00-5E-00-53-24\"]</code></p>"
 }, {
   "fieldName" : "observer.name",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
@@ -1999,6 +2149,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
 }, {
+  "fieldName" : "observer.geo.continent_code",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
+}, {
   "fieldName" : "observer.geo.continent_name",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "core",
@@ -2024,6 +2179,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "observer.geo.postal_code",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "observer.geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "core",
@@ -2033,6 +2193,11 @@
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "observer.geo.timezone",
+  "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "observer.ingress.interface.alias",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
@@ -2324,6 +2489,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
 }, {
+  "fieldName" : "process.code_signature.signing_id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The identifier used to sign the process.</p> <p>This is used to identify the application manufactured by a software vendor. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">com.apple.xpc.proxy</code></p>"
+}, {
   "fieldName" : "process.code_signature.status",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -2333,6 +2503,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Subject name of the code signer</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
+}, {
+  "fieldName" : "process.code_signature.team_id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
 }, {
   "fieldName" : "process.code_signature.trusted",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2363,6 +2538,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.hash.ssdeep",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>SSDEEP hash.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.parent.args",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2607,7 +2787,7 @@
   "fieldName" : "server.mac",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>MAC address of the server.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>MAC address of the server.</p> <p>The notation format from RFC 7042 is suggested: Each octet (that is, 8-bit byte) is represented by two [uppercase] hexadecimal digits giving the value of the octet as an unsigned integer. Successive octets are separated by a hyphen.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00-00-5E-00-53-23</code></p>"
 }, {
   "fieldName" : "server.nat.ip",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -2659,6 +2839,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
 }, {
+  "fieldName" : "server.geo.continent_code",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
+}, {
   "fieldName" : "server.geo.continent_name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
@@ -2684,6 +2869,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "server.geo.postal_code",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "server.geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
@@ -2693,6 +2883,11 @@
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "server.geo.timezone",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "server.user.domain",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -2907,7 +3102,7 @@
   "fieldName" : "source.mac",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>MAC address of the source.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>MAC address of the source.</p> <p>The notation format from RFC 7042 is suggested: Each octet (that is, 8-bit byte) is represented by two [uppercase] hexadecimal digits giving the value of the octet as an unsigned integer. Successive octets are separated by a hyphen.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00-00-5E-00-53-23</code></p>"
 }, {
   "fieldName" : "source.nat.ip",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -2959,6 +3154,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>City name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Montreal</code></p>"
 }, {
+  "fieldName" : "source.geo.continent_code",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Two-letter code representing continent’s name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">NA</code></p>"
+}, {
   "fieldName" : "source.geo.continent_name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
@@ -2984,6 +3184,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>User-defined description of a location, at the level of granularity they care about.</p> <p>Could be the name of their data centers, the floor number, if this describes a local physical entity, city names.</p> <p>Not typically used in automated geolocation.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">boston-dc</code></p>"
 }, {
+  "fieldName" : "source.geo.postal_code",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Postal code associated with the location.</p> <p>Values appropriate for this field may also be known as a postcode or ZIP code and will vary widely from country to country.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">94040</code></p>"
+}, {
   "fieldName" : "source.geo.region_iso_code",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
@@ -2993,6 +3198,11 @@
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Region name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Quebec</code></p>"
+}, {
+  "fieldName" : "source.geo.timezone",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
   "fieldName" : "source.user.domain",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
