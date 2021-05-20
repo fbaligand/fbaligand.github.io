@@ -107,7 +107,7 @@
   "fieldName" : "client.registered_domain",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The highest registered client domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
+  "fieldDescription" : "<p>The highest registered client domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
 }, {
   "fieldName" : "client.subdomain",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -117,7 +117,7 @@
   "fieldName" : "client.top_level_domain",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
   "fieldName" : "client.as.number",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -507,7 +507,7 @@
   "fieldName" : "destination.registered_domain",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The highest registered destination domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
+  "fieldDescription" : "<p>The highest registered destination domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
 }, {
   "fieldName" : "destination.subdomain",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -517,7 +517,7 @@
   "fieldName" : "destination.top_level_domain",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
   "fieldName" : "destination.as.number",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -832,7 +832,7 @@
   "fieldName" : "dll.pe.imphash",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
 }, {
   "fieldName" : "dll.pe.original_file_name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -902,7 +902,7 @@
   "fieldName" : "dns.question.registered_domain",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The highest registered domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
+  "fieldDescription" : "<p>The highest registered domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
 }, {
   "fieldName" : "dns.question.subdomain",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
@@ -912,7 +912,7 @@
   "fieldName" : "dns.question.top_level_domain",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
   "fieldName" : "dns.question.type",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
@@ -972,7 +972,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, web</p> <p>To learn more about when to use which value, visit the page <a class=\"xref\" href=\"ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1017,7 +1017,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a class=\"xref\" href=\"ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1032,7 +1032,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a class=\"xref\" href=\"ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1082,7 +1082,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a class=\"xref\" href=\"ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1147,7 +1147,7 @@
   "fieldName" : "file.mime_type",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>MIME type should identify the format of the file or stream of bytes using <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\" class=\"ulink\" target=\"_top\">IANA official types</a>, where possible. When more than one type is applicable, the most specific type should be used.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>MIME type should identify the format of the file or stream of bytes using <a href=\"https://www.iana.org/assignments/media-types/media-types.xhtml\" class=\"ulink\" target=\"_blank\">IANA official types</a>, where possible. When more than one type is applicable, the most specific type should be used.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "file.mode",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1277,7 +1277,7 @@
   "fieldName" : "file.pe.imphash",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
 }, {
   "fieldName" : "file.pe.original_file_name",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1367,7 +1367,7 @@
   "fieldName" : "file.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_blank\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
 }, {
   "fieldName" : "file.x509.subject.common_name",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1987,7 +1987,7 @@
   "fieldName" : "network.community_id",
   "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of source and destination IPs and ports, as well as the protocol used in a communication. This is a tool-agnostic standard to identify flows.</p> <p>Learn more at <a href=\"https://github.com/corelight/community-id-spec\" class=\"ulink\" target=\"_top\">https://github.com/corelight/community-id-spec</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1:hO+sN4H+MG5MY/8hIrXPqc4ZQz0=</code></p>"
+  "fieldDescription" : "<p>A hash of source and destination IPs and ports, as well as the protocol used in a communication. This is a tool-agnostic standard to identify flows.</p> <p>Learn more at <a href=\"https://github.com/corelight/community-id-spec\" class=\"ulink\" target=\"_blank\">https://github.com/corelight/community-id-spec</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1:hO+sN4H+MG5MY/8hIrXPqc4ZQz0=</code></p>"
 }, {
   "fieldName" : "network.direction",
   "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
@@ -2002,7 +2002,7 @@
   "fieldName" : "network.iana_number",
   "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>IANA Protocol Number (<a href=\"https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml\" class=\"ulink\" target=\"_top\">https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml</a>). Standardized list of protocols. This aligns well with NetFlow and sFlow related logs which use the IANA Protocol Number.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6</code></p>"
+  "fieldDescription" : "<p>IANA Protocol Number (<a href=\"https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml\" class=\"ulink\" target=\"_blank\">https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml</a>). Standardized list of protocols. This aligns well with NetFlow and sFlow related logs which use the IANA Protocol Number.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6</code></p>"
 }, {
   "fieldName" : "network.inner",
   "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
@@ -2337,7 +2337,7 @@
   "fieldName" : "package.license",
   "fieldSet" : "<abbr title='These fields contain information about an installed software package.'>Package</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>License under which the package was released.</p> <p>Use a short name, e.g. the license identifier from SPDX License List where possible (<a href=\"https://spdx.org/licenses/\" class=\"ulink\" target=\"_top\">https://spdx.org/licenses/</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Apache License 2.0</code></p>"
+  "fieldDescription" : "<p>License under which the package was released.</p> <p>Use a short name, e.g. the license identifier from SPDX License List where possible (<a href=\"https://spdx.org/licenses/\" class=\"ulink\" target=\"_blank\">https://spdx.org/licenses/</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Apache License 2.0</code></p>"
 }, {
   "fieldName" : "package.name",
   "fieldSet" : "<abbr title='These fields contain information about an installed software package.'>Package</abbr>",
@@ -2392,7 +2392,7 @@
   "fieldName" : "pe.imphash",
   "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
 }, {
   "fieldName" : "pe.original_file_name",
   "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
@@ -2647,7 +2647,7 @@
   "fieldName" : "process.pe.imphash",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_top\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
 }, {
   "fieldName" : "process.pe.original_file_name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2812,7 +2812,7 @@
   "fieldName" : "server.registered_domain",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The highest registered server domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
+  "fieldDescription" : "<p>The highest registered server domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
 }, {
   "fieldName" : "server.subdomain",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -2822,7 +2822,7 @@
   "fieldName" : "server.top_level_domain",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
   "fieldName" : "server.as.number",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3127,7 +3127,7 @@
   "fieldName" : "source.registered_domain",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The highest registered source domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
+  "fieldDescription" : "<p>The highest registered source domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
 }, {
   "fieldName" : "source.subdomain",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3137,7 +3137,7 @@
   "fieldName" : "source.top_level_domain",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
   "fieldName" : "source.as.number",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3367,47 +3367,47 @@
   "fieldName" : "threat.tactic.id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The id of tactic used by this threat. You can use a MITRE ATT&amp;CK® tactic, for example. (ex. <a href=\"https://attack.mitre.org/tactics/TA0002/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/tactics/TA0002/</a> )</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">TA0002</code></p>"
+  "fieldDescription" : "<p>The id of tactic used by this threat. You can use a MITRE ATT&amp;CK® tactic, for example. (ex. <a href=\"https://attack.mitre.org/tactics/TA0002/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/tactics/TA0002/</a> )</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">TA0002</code></p>"
 }, {
   "fieldName" : "threat.tactic.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Name of the type of tactic used by this threat. You can use a MITRE ATT&amp;CK® tactic, for example. (ex. <a href=\"https://attack.mitre.org/tactics/TA0002/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/tactics/TA0002/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Execution</code></p>"
+  "fieldDescription" : "<p>Name of the type of tactic used by this threat. You can use a MITRE ATT&amp;CK® tactic, for example. (ex. <a href=\"https://attack.mitre.org/tactics/TA0002/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/tactics/TA0002/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Execution</code></p>"
 }, {
   "fieldName" : "threat.tactic.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The reference url of tactic used by this threat. You can use a MITRE ATT&amp;CK® tactic, for example. (ex. <a href=\"https://attack.mitre.org/tactics/TA0002/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/tactics/TA0002/</a> )</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/tactics/TA0002/</code></p>"
+  "fieldDescription" : "<p>The reference url of tactic used by this threat. You can use a MITRE ATT&amp;CK® tactic, for example. (ex. <a href=\"https://attack.mitre.org/tactics/TA0002/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/tactics/TA0002/</a> )</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/tactics/TA0002/</code></p>"
 }, {
   "fieldName" : "threat.technique.id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The id of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">T1059</code></p>"
+  "fieldDescription" : "<p>The id of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">T1059</code></p>"
 }, {
   "fieldName" : "threat.technique.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The name of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.name.text (type: text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Command and Scripting Interpreter</code></p>"
+  "fieldDescription" : "<p>The name of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.name.text (type: text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Command and Scripting Interpreter</code></p>"
 }, {
   "fieldName" : "threat.technique.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The reference url of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/techniques/T1059/</code></p>"
+  "fieldDescription" : "<p>The reference url of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/techniques/T1059/</code></p>"
 }, {
   "fieldName" : "threat.technique.subtechnique.id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The full id of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">T1059.001</code></p>"
+  "fieldDescription" : "<p>The full id of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">T1059.001</code></p>"
 }, {
   "fieldName" : "threat.technique.subtechnique.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The name of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.subtechnique.name.text (type: text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">PowerShell</code></p>"
+  "fieldDescription" : "<p>The name of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.subtechnique.name.text (type: text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">PowerShell</code></p>"
 }, {
   "fieldName" : "threat.technique.subtechnique.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The reference url of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_top\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/techniques/T1059/001/</code></p>"
+  "fieldDescription" : "<p>The reference url of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/techniques/T1059/001/</code></p>"
 }, {
   "fieldName" : "tls.cipher",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -3487,7 +3487,7 @@
   "fieldName" : "tls.next_protocol",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>String indicating the protocol being tunneled. Per the values in the IANA registry (<a href=\"https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids\" class=\"ulink\" target=\"_top\">https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids</a>), this string should be lower case.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">http/1.1</code></p>"
+  "fieldDescription" : "<p>String indicating the protocol being tunneled. Per the values in the IANA registry (<a href=\"https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids\" class=\"ulink\" target=\"_blank\">https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids</a>), this string should be lower case.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">http/1.1</code></p>"
 }, {
   "fieldName" : "tls.resumed",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -3632,7 +3632,7 @@
   "fieldName" : "tls.client.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_blank\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
 }, {
   "fieldName" : "tls.client.x509.subject.common_name",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -3752,7 +3752,7 @@
   "fieldName" : "tls.server.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_blank\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
 }, {
   "fieldName" : "tls.server.x509.subject.common_name",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -3857,7 +3857,7 @@
   "fieldName" : "url.registered_domain",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The highest registered url domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
+  "fieldDescription" : "<p>The highest registered url domain, stripped of the subdomain.</p> <p>For example, the registered domain for \"foo.example.com\" is \"example.com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last two labels will not work well for TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">example.com</code></p>"
 }, {
   "fieldName" : "url.scheme",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
@@ -3872,7 +3872,7 @@
   "fieldName" : "url.top_level_domain",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_top\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
+  "fieldDescription" : "<p>The effective top level domain (eTLD), also known as the domain suffix, is the last part of the domain name. For example, the top level domain for example.com is \"com\".</p> <p>This value can be determined precisely with a list like the public suffix list (<a href=\"http://publicsuffix.org\" class=\"ulink\" target=\"_blank\">http://publicsuffix.org</a>). Trying to approximate this by simply taking the last label will not work well for effective TLDs such as \"co.uk\".</p> <p>type: keyword</p> <p>example: <code class=\"literal\">co.uk</code></p>"
 }, {
   "fieldName" : "url.username",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
@@ -4102,27 +4102,27 @@
   "fieldName" : "vulnerability.category",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The type of system or architecture that the vulnerability affects. These may be platform-specific (for example, Debian or SUSE) or general (for example, Database or Firewall). For example (<a href=\"https://qualysguard.qualys.com/qwebhelp/fo_portal/knowledgebase/vulnerability_categories.htm\" class=\"ulink\" target=\"_top\">Qualys vulnerability categories</a>)</p> <p>This field must be an array.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"Firewall\"]</code></p>"
+  "fieldDescription" : "<p>The type of system or architecture that the vulnerability affects. These may be platform-specific (for example, Debian or SUSE) or general (for example, Database or Firewall). For example (<a href=\"https://qualysguard.qualys.com/qwebhelp/fo_portal/knowledgebase/vulnerability_categories.htm\" class=\"ulink\" target=\"_blank\">Qualys vulnerability categories</a>)</p> <p>This field must be an array.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"Firewall\"]</code></p>"
 }, {
   "fieldName" : "vulnerability.classification",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The classification of the vulnerability scoring system. For example (<a href=\"https://www.first.org/cvss/\" class=\"ulink\" target=\"_top\">https://www.first.org/cvss/</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVSS</code></p>"
+  "fieldDescription" : "<p>The classification of the vulnerability scoring system. For example (<a href=\"https://www.first.org/cvss/\" class=\"ulink\" target=\"_blank\">https://www.first.org/cvss/</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVSS</code></p>"
 }, {
   "fieldName" : "vulnerability.description",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The description of the vulnerability that provides additional context of the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#cve_entry_descriptions_created\" class=\"ulink\" target=\"_top\">Common Vulnerabilities and Exposure CVE description</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* vulnerability.description.text (type: text)</p> <p>example: <code class=\"literal\">In macOS before 2.12.6, there is a vulnerability in the RPC...</code></p>"
+  "fieldDescription" : "<p>The description of the vulnerability that provides additional context of the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#cve_entry_descriptions_created\" class=\"ulink\" target=\"_blank\">Common Vulnerabilities and Exposure CVE description</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* vulnerability.description.text (type: text)</p> <p>example: <code class=\"literal\">In macOS before 2.12.6, there is a vulnerability in the RPC...</code></p>"
 }, {
   "fieldName" : "vulnerability.enumeration",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The type of identifier used for this vulnerability. For example (<a href=\"https://cve.mitre.org/about/\" class=\"ulink\" target=\"_top\">https://cve.mitre.org/about/</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVE</code></p>"
+  "fieldDescription" : "<p>The type of identifier used for this vulnerability. For example (<a href=\"https://cve.mitre.org/about/\" class=\"ulink\" target=\"_blank\">https://cve.mitre.org/about/</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVE</code></p>"
 }, {
   "fieldName" : "vulnerability.id",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The identification (ID) is the number portion of a vulnerability entry. It includes a unique identification number for the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#what_is_cve_id)\" class=\"ulink\" target=\"_top\">Common Vulnerabilities and Exposure CVE ID</a></p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVE-2019-00001</code></p>"
+  "fieldDescription" : "<p>The identification (ID) is the number portion of a vulnerability entry. It includes a unique identification number for the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#what_is_cve_id)\" class=\"ulink\" target=\"_blank\">Common Vulnerabilities and Exposure CVE ID</a></p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVE-2019-00001</code></p>"
 }, {
   "fieldName" : "vulnerability.reference",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
@@ -4142,27 +4142,27 @@
   "fieldName" : "vulnerability.score.base",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Scores can range from 0.0 to 10.0, with 10.0 being the most severe.</p> <p>Base scores cover an assessment for exploitability metrics (attack vector, complexity, privileges, and user interaction), impact metrics (confidentiality, integrity, and availability), and scope. For example (<a href=\"https://www.first.org/cvss/specification-document\" class=\"ulink\" target=\"_top\">https://www.first.org/cvss/specification-document</a>)</p> <p>type: float</p> <p>example: <code class=\"literal\">5.5</code></p>"
+  "fieldDescription" : "<p>Scores can range from 0.0 to 10.0, with 10.0 being the most severe.</p> <p>Base scores cover an assessment for exploitability metrics (attack vector, complexity, privileges, and user interaction), impact metrics (confidentiality, integrity, and availability), and scope. For example (<a href=\"https://www.first.org/cvss/specification-document\" class=\"ulink\" target=\"_blank\">https://www.first.org/cvss/specification-document</a>)</p> <p>type: float</p> <p>example: <code class=\"literal\">5.5</code></p>"
 }, {
   "fieldName" : "vulnerability.score.environmental",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Scores can range from 0.0 to 10.0, with 10.0 being the most severe.</p> <p>Environmental scores cover an assessment for any modified Base metrics, confidentiality, integrity, and availability requirements. For example (<a href=\"https://www.first.org/cvss/specification-document\" class=\"ulink\" target=\"_top\">https://www.first.org/cvss/specification-document</a>)</p> <p>type: float</p> <p>example: <code class=\"literal\">5.5</code></p>"
+  "fieldDescription" : "<p>Scores can range from 0.0 to 10.0, with 10.0 being the most severe.</p> <p>Environmental scores cover an assessment for any modified Base metrics, confidentiality, integrity, and availability requirements. For example (<a href=\"https://www.first.org/cvss/specification-document\" class=\"ulink\" target=\"_blank\">https://www.first.org/cvss/specification-document</a>)</p> <p>type: float</p> <p>example: <code class=\"literal\">5.5</code></p>"
 }, {
   "fieldName" : "vulnerability.score.temporal",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Scores can range from 0.0 to 10.0, with 10.0 being the most severe.</p> <p>Temporal scores cover an assessment for code maturity, remediation level, and confidence. For example (<a href=\"https://www.first.org/cvss/specification-document\" class=\"ulink\" target=\"_top\">https://www.first.org/cvss/specification-document</a>)</p> <p>type: float</p>"
+  "fieldDescription" : "<p>Scores can range from 0.0 to 10.0, with 10.0 being the most severe.</p> <p>Temporal scores cover an assessment for code maturity, remediation level, and confidence. For example (<a href=\"https://www.first.org/cvss/specification-document\" class=\"ulink\" target=\"_blank\">https://www.first.org/cvss/specification-document</a>)</p> <p>type: float</p>"
 }, {
   "fieldName" : "vulnerability.score.version",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The National Vulnerability Database (NVD) provides qualitative severity rankings of \"Low\", \"Medium\", and \"High\" for CVSS v2.0 base score ranges in addition to the severity ratings for CVSS v3.0 as they are defined in the CVSS v3.0 specification.</p> <p>CVSS is owned and managed by FIRST.Org, Inc. (FIRST), a US-based non-profit organization, whose mission is to help computer security incident response teams across the world. For example (<a href=\"https://nvd.nist.gov/vuln-metrics/cvss\" class=\"ulink\" target=\"_top\">https://nvd.nist.gov/vuln-metrics/cvss</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
+  "fieldDescription" : "<p>The National Vulnerability Database (NVD) provides qualitative severity rankings of \"Low\", \"Medium\", and \"High\" for CVSS v2.0 base score ranges in addition to the severity ratings for CVSS v3.0 as they are defined in the CVSS v3.0 specification.</p> <p>CVSS is owned and managed by FIRST.Org, Inc. (FIRST), a US-based non-profit organization, whose mission is to help computer security incident response teams across the world. For example (<a href=\"https://nvd.nist.gov/vuln-metrics/cvss\" class=\"ulink\" target=\"_blank\">https://nvd.nist.gov/vuln-metrics/cvss</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
 }, {
   "fieldName" : "vulnerability.severity",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The severity of the vulnerability can help with metrics and internal prioritization regarding remediation. For example (<a href=\"https://nvd.nist.gov/vuln-metrics/cvss\" class=\"ulink\" target=\"_top\">https://nvd.nist.gov/vuln-metrics/cvss</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Critical</code></p>"
+  "fieldDescription" : "<p>The severity of the vulnerability can help with metrics and internal prioritization regarding remediation. For example (<a href=\"https://nvd.nist.gov/vuln-metrics/cvss\" class=\"ulink\" target=\"_blank\">https://nvd.nist.gov/vuln-metrics/cvss</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Critical</code></p>"
 }, {
   "fieldName" : "x509.alternative_names",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
@@ -4242,7 +4242,7 @@
   "fieldName" : "x509.signature_algorithm",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_top\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
+  "fieldDescription" : "<p>Identifier for certificate signature algorithm. We recommend using names found in Go Lang Crypto library. See <a href=\"https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353\" class=\"ulink\" target=\"_blank\">https://github.com/golang/go/blob/go1.14/src/crypto/x509/x509.go#L337-L353</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SHA256-RSA</code></p>"
 }, {
   "fieldName" : "x509.subject.common_name",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
