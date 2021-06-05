@@ -459,6 +459,21 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Runtime managing this container.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">docker</code></p>"
 }, {
+  "fieldName" : "data_stream.dataset",
+  "fieldSet" : "<abbr title='The data_stream fields take part in defining the new data stream naming scheme.'>Data Stream</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The field can contain anything that makes sense to signify the source of the data.</p> <p>Examples include <code class=\"literal\">nginx.access</code>, <code class=\"literal\">prometheus</code>, <code class=\"literal\">endpoint</code> etc. For data streams that otherwise fit, but that do not have dataset set we use the value \"generic\" for the dataset value. <code class=\"literal\">event.dataset</code> should have the same value as <code class=\"literal\">data_stream.dataset</code>.</p> <p>Beyond the Elasticsearch data stream naming criteria noted above, the <code class=\"literal\">dataset</code> value has additional restrictions:</p> <p> * Must not contain <code class=\"literal\">-</code></p> <p> * No longer than 100 characters</p> <p>type: constant_keyword</p> <p>example: <code class=\"literal\">nginx.access</code></p>"
+}, {
+  "fieldName" : "data_stream.namespace",
+  "fieldSet" : "<abbr title='The data_stream fields take part in defining the new data stream naming scheme.'>Data Stream</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A user defined namespace. Namespaces are useful to allow grouping of data.</p> <p>Many users already organize their indices this way, and the data stream naming scheme now provides this best practice as a default. Many users will populate this field with <code class=\"literal\">default</code>. If no value is used, it falls back to <code class=\"literal\">default</code>.</p> <p>Beyond the Elasticsearch index naming criteria noted above, <code class=\"literal\">namespace</code> value has the additional restrictions:</p> <p> * Must not contain <code class=\"literal\">-</code></p> <p> * No longer than 100 characters</p> <p>type: constant_keyword</p> <p>example: <code class=\"literal\">production</code></p>"
+}, {
+  "fieldName" : "data_stream.type",
+  "fieldSet" : "<abbr title='The data_stream fields take part in defining the new data stream naming scheme.'>Data Stream</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An overarching type for the data stream.</p> <p>Currently allowed values are \"logs\" and \"metrics\". We expect to also add \"traces\" and \"synthetics\" in the near future.</p> <p>type: constant_keyword</p> <p>example: <code class=\"literal\">logs</code></p>"
+}, {
   "fieldName" : "destination.address",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
@@ -972,7 +987,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.10/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1017,7 +1032,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.10/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1032,7 +1047,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.10/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1082,7 +1097,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.9/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.10/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1512,17 +1527,17 @@
   "fieldName" : "host.cpu.usage",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1.</p> <p>Scaling factor: 1000.</p> <p>For example: For a two core host, this value should be the average of the two cores, between 0 and 1.</p> <p>type: scaled_float</p>"
+  "fieldDescription" : "<p>Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1.</p> <p>Scaling factor: 1000.</p> <p>For example: For a two core host, this value should be the average of the two cores, between 0 and 1.</p> <p>type: scaled_float</p>"
 }, {
   "fieldName" : "host.disk.read.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The total number of bytes (gauge) read successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes (gauge) read successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.disk.write.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The total number of bytes (gauge) written successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes (gauge) written successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.domain",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1557,22 +1572,22 @@
   "fieldName" : "host.network.egress.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of bytes (gauge) sent out on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The number of bytes (gauge) sent out on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.network.egress.packets",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of packets (gauge) sent out on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The number of packets (gauge) sent out on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.network.ingress.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of bytes received (gauge) on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The number of bytes received (gauge) on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.network.ingress.packets",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is currently considered beta. </span> </span></p> <p>The number of packets (gauge) received on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The number of packets (gauge) received on all network interfaces by the host since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "host.type",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2258,6 +2273,51 @@
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Operating system version as a raw string.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10.14.1</code></p>"
+}, {
+  "fieldName" : "orchestrator.api_version",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>API version being used to carry out the action</p> <p>type: keyword</p> <p>example: <code class=\"literal\">v1beta1</code></p>"
+}, {
+  "fieldName" : "orchestrator.cluster.name",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the cluster.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "orchestrator.cluster.url",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>URL of the API used to manage the cluster.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "orchestrator.cluster.version",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The version of the cluster.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "orchestrator.namespace",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Namespace in which the action is taking place.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">kube-system</code></p>"
+}, {
+  "fieldName" : "orchestrator.organization",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Organization affected by the event (for multi-tenant orchestrator setups).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">elastic</code></p>"
+}, {
+  "fieldName" : "orchestrator.resource.name",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Name of the resource being acted upon.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">test-pod-cdcws</code></p>"
+}, {
+  "fieldName" : "orchestrator.resource.type",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Type of resource being acted upon.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">service</code></p>"
+}, {
+  "fieldName" : "orchestrator.type",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Orchestrator cluster type (e.g. kubernetes, nomad or cloudfoundry).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">kubernetes</code></p>"
 }, {
   "fieldName" : "organization.id",
   "fieldSet" : "<abbr title='Fields describing the organization or company the event is associated with.'>Organization</abbr>",
