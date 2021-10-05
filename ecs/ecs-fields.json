@@ -12,7 +12,7 @@
   "fieldName" : "message",
   "fieldSet" : "<abbr title='All fields defined directly at the root of the events.'> Base</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>For log events the message field contains the log message, optimized for viewing in a log viewer.</p> <p>For structured logs without an original message field, other fields can be concatenated to form a human-readable summary of the event.</p> <p>If multiple messages exist, they can be combined into one message.</p> <p>type: text</p> <p>example: <code class=\"literal\">Hello World</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type for this field is currently beta. </span> </span></p> <p>For log events the message field contains the log message, optimized for viewing in a log viewer.</p> <p>For structured logs without an original message field, other fields can be concatenated to form a human-readable summary of the event.</p> <p>If multiple messages exist, they can be combined into one message.</p> <p>type: match_only_text</p> <p>example: <code class=\"literal\">Hello World</code></p>"
 }, {
   "fieldName" : "tags",
   "fieldSet" : "<abbr title='All fields defined directly at the root of the events.'> Base</abbr>",
@@ -57,7 +57,7 @@
   "fieldName" : "as.organization.name",
   "fieldSet" : "<abbr title='Fields describing an Autonomous System (Internet routing prefix).'>Autonomous System</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "client.address",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -127,7 +127,7 @@
   "fieldName" : "client.as.organization.name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "client.geo.city_name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -197,7 +197,7 @@
   "fieldName" : "client.user.full_name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "client.user.hash",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -207,12 +207,12 @@
   "fieldName" : "client.user.id",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "client.user.name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "client.user.roles",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -232,7 +232,7 @@
   "fieldName" : "client.user.changes.full_name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "client.user.changes.hash",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -242,12 +242,12 @@
   "fieldName" : "client.user.changes.id",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "client.user.changes.name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "client.user.changes.roles",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -267,7 +267,7 @@
   "fieldName" : "client.user.effective.full_name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "client.user.effective.hash",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -277,12 +277,12 @@
   "fieldName" : "client.user.effective.id",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "client.user.effective.name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "client.user.effective.roles",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -317,7 +317,7 @@
   "fieldName" : "client.user.target.full_name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "client.user.target.hash",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -327,12 +327,12 @@
   "fieldName" : "client.user.target.id",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "client.user.target.name",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "client.user.target.roles",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
@@ -394,6 +394,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The cloud service name is intended to distinguish services running on different platforms within a provider, eg AWS EC2 vs Lambda, GCP GCE vs App Engine, Azure VM vs App Server.</p> <p>Examples: app engine, app service, cloud run, fargate, lambda.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">lambda</code></p>"
 }, {
+  "fieldName" : "code_signature.digest_algorithm",
+  "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The hashing algorithm used to sign the process.</p> <p>This value can distinguish signatures when a file is signed multiple times by the same signer but with a different digest algorithm.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">sha256</code></p>"
+}, {
   "fieldName" : "code_signature.exists",
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
   "fieldLevel" : "core",
@@ -418,6 +423,11 @@
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
+}, {
+  "fieldName" : "code_signature.timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Date and time when the code signature was generated and signed.</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-01-01T12:10:30Z</code></p>"
 }, {
   "fieldName" : "code_signature.trusted",
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
@@ -542,7 +552,7 @@
   "fieldName" : "destination.as.organization.name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "destination.geo.city_name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -612,7 +622,7 @@
   "fieldName" : "destination.user.full_name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "destination.user.hash",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -622,12 +632,12 @@
   "fieldName" : "destination.user.id",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "destination.user.name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "destination.user.roles",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -647,7 +657,7 @@
   "fieldName" : "destination.user.changes.full_name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "destination.user.changes.hash",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -657,12 +667,12 @@
   "fieldName" : "destination.user.changes.id",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "destination.user.changes.name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "destination.user.changes.roles",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -682,7 +692,7 @@
   "fieldName" : "destination.user.effective.full_name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "destination.user.effective.hash",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -692,12 +702,12 @@
   "fieldName" : "destination.user.effective.id",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "destination.user.effective.name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "destination.user.effective.roles",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -732,7 +742,7 @@
   "fieldName" : "destination.user.target.full_name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "destination.user.target.hash",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -742,12 +752,12 @@
   "fieldName" : "destination.user.target.id",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "destination.user.target.name",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "destination.user.target.roles",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
@@ -763,6 +773,11 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Full file path of the library.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">C:\\Windows\\System32\\kernel32.dll</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.digest_algorithm",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The hashing algorithm used to sign the process.</p> <p>This value can distinguish signatures when a file is signed multiple times by the same signer but with a different digest algorithm.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">sha256</code></p>"
 }, {
   "fieldName" : "dll.code_signature.exists",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -788,6 +803,11 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Date and time when the code signature was generated and signed.</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-01-01T12:10:30Z</code></p>"
 }, {
   "fieldName" : "dll.code_signature.trusted",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -1112,12 +1132,12 @@
   "fieldName" : "error.message",
   "fieldSet" : "<abbr title='Fields about errors of any kind.'>Error</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Error message.</p> <p>type: text</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type for this field is currently beta. </span> </span></p> <p>Error message.</p> <p>type: match_only_text</p>"
 }, {
   "fieldName" : "error.stack_trace",
   "fieldSet" : "<abbr title='Fields about errors of any kind.'>Error</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The stack trace of this error in plain text.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* error.stack_trace.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>The stack trace of this error in plain text.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* error.stack_trace.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "error.type",
   "fieldSet" : "<abbr title='Fields about errors of any kind.'>Error</abbr>",
@@ -1137,7 +1157,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.11/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.12/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1182,7 +1202,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.11/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.12/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1197,7 +1217,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.11/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.12/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1247,7 +1267,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.11/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/1.12/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1294,6 +1314,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>File extension, excluding the leading dot.</p> <p>Note that when the file name has multiple extensions (example.tar.gz), only the last one should be captured (\"gz\", not \"tar.gz\").</p> <p>type: keyword</p> <p>example: <code class=\"literal\">png</code></p>"
 }, {
+  "fieldName" : "file.fork_name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A fork is additional data associated with a filesystem object.</p> <p>On Linux, a resource fork is used to store additional data with a filesystem object. A file always has at least one fork for the data portion, and additional forks may exist.</p> <p>On NTFS, this is analogous to an Alternate Data Stream (ADS), and the default data stream for a file is just called $DATA. Zone.Identifier is commonly used by Windows to track contents downloaded from the Internet. An ADS is typically of the form: <code class=\"literal\">C:\\path\\to\\filename.extension:some_fork_name</code>, and <code class=\"literal\">some_fork_name</code> is the value that should populate <code class=\"literal\">fork_name</code>. <code class=\"literal\">filename.extension</code> should populate <code class=\"literal\">file.name</code>, and <code class=\"literal\">extension</code> should populate <code class=\"literal\">file.extension</code>. The full path, <code class=\"literal\">file.path</code>, will include the fork name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Zone.Identifer</code></p>"
+}, {
   "fieldName" : "file.gid",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
@@ -1337,7 +1362,7 @@
   "fieldName" : "file.path",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Full path to the file, including the file name. It should include the drive letter, when appropriate.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.path.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice/example.png</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Full path to the file, including the file name. It should include the drive letter, when appropriate.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.path.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/home/alice/example.png</code></p>"
 }, {
   "fieldName" : "file.size",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1347,7 +1372,7 @@
   "fieldName" : "file.target_path",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Target path for symlinks.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.target_path.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Target path for symlinks.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.target_path.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "file.type",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1358,6 +1383,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The user ID (UID) or security identifier (SID) of the file owner.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1001</code></p>"
+}, {
+  "fieldName" : "file.code_signature.digest_algorithm",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The hashing algorithm used to sign the process.</p> <p>This value can distinguish signatures when a file is signed multiple times by the same signer but with a different digest algorithm.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">sha256</code></p>"
 }, {
   "fieldName" : "file.code_signature.exists",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1383,6 +1413,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
+}, {
+  "fieldName" : "file.code_signature.timestamp",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Date and time when the code signature was generated and signed.</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-01-01T12:10:30Z</code></p>"
 }, {
   "fieldName" : "file.code_signature.trusted",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1957,7 +1992,7 @@
   "fieldName" : "host.os.full",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
 }, {
   "fieldName" : "host.os.kernel",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1967,7 +2002,7 @@
   "fieldName" : "host.os.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
 }, {
   "fieldName" : "host.os.platform",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -1997,7 +2032,7 @@
   "fieldName" : "host.user.full_name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "host.user.hash",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2007,12 +2042,12 @@
   "fieldName" : "host.user.id",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "host.user.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "host.user.roles",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2032,7 +2067,7 @@
   "fieldName" : "host.user.changes.full_name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "host.user.changes.hash",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2042,12 +2077,12 @@
   "fieldName" : "host.user.changes.id",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "host.user.changes.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "host.user.changes.roles",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2067,7 +2102,7 @@
   "fieldName" : "host.user.effective.full_name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "host.user.effective.hash",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2077,12 +2112,12 @@
   "fieldName" : "host.user.effective.id",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "host.user.effective.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "host.user.effective.roles",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2117,7 +2152,7 @@
   "fieldName" : "host.user.target.full_name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "host.user.target.hash",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2127,12 +2162,12 @@
   "fieldName" : "host.user.target.id",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "host.user.target.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "host.user.target.roles",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2147,7 +2182,7 @@
   "fieldName" : "http.request.body.content",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The full HTTP request body.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* http.request.body.content.text (type: text)</p> <p>example: <code class=\"literal\">Hello world</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>The full HTTP request body.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* http.request.body.content.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Hello world</code></p>"
 }, {
   "fieldName" : "http.request.bytes",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
@@ -2182,7 +2217,7 @@
   "fieldName" : "http.response.body.content",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The full HTTP response body.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* http.response.body.content.text (type: text)</p> <p>example: <code class=\"literal\">Hello world</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>The full HTTP response body.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* http.response.body.content.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Hello world</code></p>"
 }, {
   "fieldName" : "http.response.bytes",
   "fieldSet" : "<abbr title='Fields describing an HTTP request.'>HTTP</abbr>",
@@ -2542,7 +2577,7 @@
   "fieldName" : "observer.os.full",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
 }, {
   "fieldName" : "observer.os.kernel",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
@@ -2552,7 +2587,7 @@
   "fieldName" : "observer.os.name",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
 }, {
   "fieldName" : "observer.os.platform",
   "fieldSet" : "<abbr title='Fields describing an entity observing the event from outside the host.'>Observer</abbr>",
@@ -2622,7 +2657,7 @@
   "fieldName" : "organization.name",
   "fieldSet" : "<abbr title='Fields describing the organization or company the event is associated with.'>Organization</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* organization.name.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* organization.name.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "os.family",
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
@@ -2632,7 +2667,7 @@
   "fieldName" : "os.full",
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
 }, {
   "fieldName" : "os.kernel",
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
@@ -2642,7 +2677,7 @@
   "fieldName" : "os.name",
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
 }, {
   "fieldName" : "os.platform",
   "fieldSet" : "<abbr title='OS fields contain information about the operating system.'>Operating System</abbr>",
@@ -2772,7 +2807,12 @@
   "fieldName" : "process.command_line",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Full command line that started the process, including the absolute path to the executable, and all arguments.</p> <p>Some arguments may be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.command_line.text (type: text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh -l user 10.0.0.16</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>Full command line that started the process, including the absolute path to the executable, and all arguments.</p> <p>Some arguments may be filtered to protect sensitive information.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* process.command_line.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh -l user 10.0.0.16</code></p>"
+}, {
+  "fieldName" : "process.end",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The time the process ended.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.853Z</code></p>"
 }, {
   "fieldName" : "process.entity_id",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2782,7 +2822,7 @@
   "fieldName" : "process.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Absolute path to the process executable.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.executable.text (type: text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Absolute path to the process executable.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.executable.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh</code></p>"
 }, {
   "fieldName" : "process.exit_code",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2792,7 +2832,7 @@
   "fieldName" : "process.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Process name.</p> <p>Sometimes called program name or similar.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.name.text (type: text)</p> <p>example: <code class=\"literal\">ssh</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Process name.</p> <p>Sometimes called program name or similar.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">ssh</code></p>"
 }, {
   "fieldName" : "process.pgid",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2827,7 +2867,7 @@
   "fieldName" : "process.title",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Process title.</p> <p>The proctitle, some times the same as process name. Can also be different: for example a browser setting its title to the web page currently opened.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.title.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Process title.</p> <p>The proctitle, some times the same as process name. Can also be different: for example a browser setting its title to the web page currently opened.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.title.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "process.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2837,7 +2877,12 @@
   "fieldName" : "process.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.working_directory.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.working_directory.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/home/alice</code></p>"
+}, {
+  "fieldName" : "process.code_signature.digest_algorithm",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The hashing algorithm used to sign the process.</p> <p>This value can distinguish signatures when a file is signed multiple times by the same signer but with a different digest algorithm.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">sha256</code></p>"
 }, {
   "fieldName" : "process.code_signature.exists",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -2863,6 +2908,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
+}, {
+  "fieldName" : "process.code_signature.timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Date and time when the code signature was generated and signed.</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-01-01T12:10:30Z</code></p>"
 }, {
   "fieldName" : "process.code_signature.trusted",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3057,7 +3107,12 @@
   "fieldName" : "process.parent.command_line",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Full command line that started the process, including the absolute path to the executable, and all arguments.</p> <p>Some arguments may be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.command_line.text (type: text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh -l user 10.0.0.16</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>Full command line that started the process, including the absolute path to the executable, and all arguments.</p> <p>Some arguments may be filtered to protect sensitive information.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* process.command_line.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh -l user 10.0.0.16</code></p>"
+}, {
+  "fieldName" : "process.parent.end",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The time the process ended.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.853Z</code></p>"
 }, {
   "fieldName" : "process.parent.entity_id",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3067,7 +3122,7 @@
   "fieldName" : "process.parent.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Absolute path to the process executable.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.executable.text (type: text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Absolute path to the process executable.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.executable.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/usr/bin/ssh</code></p>"
 }, {
   "fieldName" : "process.parent.exit_code",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3077,7 +3132,7 @@
   "fieldName" : "process.parent.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Process name.</p> <p>Sometimes called program name or similar.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.name.text (type: text)</p> <p>example: <code class=\"literal\">ssh</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Process name.</p> <p>Sometimes called program name or similar.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">ssh</code></p>"
 }, {
   "fieldName" : "process.parent.pgid",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3112,7 +3167,7 @@
   "fieldName" : "process.parent.title",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Process title.</p> <p>The proctitle, some times the same as process name. Can also be different: for example a browser setting its title to the web page currently opened.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.title.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Process title.</p> <p>The proctitle, some times the same as process name. Can also be different: for example a browser setting its title to the web page currently opened.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.title.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "process.parent.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3122,7 +3177,7 @@
   "fieldName" : "process.parent.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.working_directory.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* process.working_directory.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/home/alice</code></p>"
 }, {
   "fieldName" : "process.pe.architecture",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3167,7 +3222,7 @@
   "fieldName" : "registry.data.strings",
   "fieldSet" : "<abbr title='Fields related to Windows Registry operations.'>Registry</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Content when writing string types.</p> <p>Populated as an array when writing string data to the registry. For single string registry types (REG_SZ, REG_EXPAND_SZ), this should be an array with one string. For sequences of string with REG_MULTI_SZ, this array will be variable length. For numeric data, such as REG_DWORD and REG_QWORD, this should be populated with the decimal representation (e.g <code class=\"literal\">\"1\"</code>).</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"C:\\rta\\red_ttp\\bin\\myapp.exe\"]</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">wildcard</code> data type for this field is currently beta. </span> </span></p> <p>Content when writing string types.</p> <p>Populated as an array when writing string data to the registry. For single string registry types (REG_SZ, REG_EXPAND_SZ), this should be an array with one string. For sequences of string with REG_MULTI_SZ, this array will be variable length. For numeric data, such as REG_DWORD and REG_QWORD, this should be populated with the decimal representation (e.g <code class=\"literal\">\"1\"</code>).</p> <p>type: wildcard</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"C:\\rta\\red_ttp\\bin\\myapp.exe\"]</code></p>"
 }, {
   "fieldName" : "registry.data.type",
   "fieldSet" : "<abbr title='Fields related to Windows Registry operations.'>Registry</abbr>",
@@ -3332,7 +3387,7 @@
   "fieldName" : "server.as.organization.name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "server.geo.city_name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3402,7 +3457,7 @@
   "fieldName" : "server.user.full_name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "server.user.hash",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3412,12 +3467,12 @@
   "fieldName" : "server.user.id",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "server.user.name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "server.user.roles",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3437,7 +3492,7 @@
   "fieldName" : "server.user.changes.full_name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "server.user.changes.hash",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3447,12 +3502,12 @@
   "fieldName" : "server.user.changes.id",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "server.user.changes.name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "server.user.changes.roles",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3472,7 +3527,7 @@
   "fieldName" : "server.user.effective.full_name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "server.user.effective.hash",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3482,12 +3537,12 @@
   "fieldName" : "server.user.effective.id",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "server.user.effective.name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "server.user.effective.roles",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3522,7 +3577,7 @@
   "fieldName" : "server.user.target.full_name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "server.user.target.hash",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
@@ -3532,17 +3587,27 @@
   "fieldName" : "server.user.target.id",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "server.user.target.name",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "server.user.target.roles",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "service.address",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Address where data about this service was collected from.</p> <p>This should be a URI, network address (ipv4:port or [ipv6]:port) or a resource path (sockets).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">172.26.0.2:5432</code></p>"
+}, {
+  "fieldName" : "service.environment",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Identifies the environment where the service is running.</p> <p>If the same service runs in different environments (production, staging, QA, development, etc.), the environment can identify other instances of the same service. Can also group services and applications from the same environment.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">production</code></p>"
 }, {
   "fieldName" : "service.ephemeral_id",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
@@ -3647,7 +3712,7 @@
   "fieldName" : "source.as.organization.name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "source.geo.city_name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3717,7 +3782,7 @@
   "fieldName" : "source.user.full_name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "source.user.hash",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3727,12 +3792,12 @@
   "fieldName" : "source.user.id",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "source.user.name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "source.user.roles",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3752,7 +3817,7 @@
   "fieldName" : "source.user.changes.full_name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "source.user.changes.hash",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3762,12 +3827,12 @@
   "fieldName" : "source.user.changes.id",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "source.user.changes.name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "source.user.changes.roles",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3787,7 +3852,7 @@
   "fieldName" : "source.user.effective.full_name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "source.user.effective.hash",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3797,12 +3862,12 @@
   "fieldName" : "source.user.effective.id",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "source.user.effective.name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "source.user.effective.roles",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3837,7 +3902,7 @@
   "fieldName" : "source.user.target.full_name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "source.user.target.hash",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3847,12 +3912,12 @@
   "fieldName" : "source.user.target.id",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "source.user.target.name",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "source.user.target.roles",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -3862,7 +3927,7 @@
   "fieldName" : "threat.enrichments",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A list of associated indicators objects enriching the event, and the context of that association/enrichment.</p> <p>type: nested</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A list of associated indicators objects enriching the event, and the context of that association/enrichment.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -3972,22 +4037,22 @@
   "fieldName" : "threat.group.alias",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The alias(es) of the group for a set of related intrusion activity that are tracked by a common name in the security community. While not required, you can use a MITRE ATT&amp;CK® group alias(es).</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[ \"Magecart Group 6\" ]</code></p>"
+  "fieldDescription" : "<p>The alias(es) of the group for a set of related intrusion activity that are tracked by a common name in the security community.</p> <p>While not required, you can use a MITRE ATT&amp;CK® group alias(es).</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[ \"Magecart Group 6\" ]</code></p>"
 }, {
   "fieldName" : "threat.group.id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The id of the group for a set of related intrusion activity that are tracked by a common name in the security community. While not required, you can use a MITRE ATT&amp;CK® group id.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">G0037</code></p>"
+  "fieldDescription" : "<p>The id of the group for a set of related intrusion activity that are tracked by a common name in the security community.</p> <p>While not required, you can use a MITRE ATT&amp;CK® group id.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">G0037</code></p>"
 }, {
   "fieldName" : "threat.group.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The name of the group for a set of related intrusion activity that are tracked by a common name in the security community. While not required, you can use a MITRE ATT&amp;CK® group name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">FIN6</code></p>"
+  "fieldDescription" : "<p>The name of the group for a set of related intrusion activity that are tracked by a common name in the security community.</p> <p>While not required, you can use a MITRE ATT&amp;CK® group name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">FIN6</code></p>"
 }, {
   "fieldName" : "threat.group.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The reference URL of the group for a set of related intrusion activity that are tracked by a common name in the security community. While not required, you can use a MITRE ATT&amp;CK® group reference URL.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">https://attack.mitre.org/groups/G0037/</code></p>"
+  "fieldDescription" : "<p>The reference URL of the group for a set of related intrusion activity that are tracked by a common name in the security community.</p> <p>While not required, you can use a MITRE ATT&amp;CK® group reference URL.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">https://attack.mitre.org/groups/G0037/</code></p>"
 }, {
   "fieldName" : "threat.indicator.confidence",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4059,30 +4124,35 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Type of indicator as represented by Cyber Observable in STIX 2.0.</p> <p>Recommended values:</p> <p> * autonomous-system</p> <p> * artifact</p> <p> * directory</p> <p> * domain-name</p> <p> * email-addr</p> <p> * file</p> <p> * ipv4-addr</p> <p> * ipv6-addr</p> <p> * mac-addr</p> <p> * mutex</p> <p> * port</p> <p> * process</p> <p> * software</p> <p> * url</p> <p> * user-account</p> <p> * windows-registry-key</p> <p> * x509-certificate</p> <p>type: keyword</p> <p>example: <code class=\"literal\">ipv4-addr</code></p>"
 }, {
+  "fieldName" : "threat.software.alias",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The alias(es) of the software for a set of related intrusion activity that are tracked by a common name in the security community.</p> <p>While not required, you can use a MITRE ATT&amp;CK® associated software description.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[ \"X-Agent\" ]</code></p>"
+}, {
   "fieldName" : "threat.software.id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The id of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®. While not required, you can use a MITRE ATT&amp;CK® software id.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S0552</code></p>"
+  "fieldDescription" : "<p>The id of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®.</p> <p>While not required, you can use a MITRE ATT&amp;CK® software id.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S0552</code></p>"
 }, {
   "fieldName" : "threat.software.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The name of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®. While not required, you can use a MITRE ATT&amp;CK® software name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">AdFind</code></p>"
+  "fieldDescription" : "<p>The name of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®.</p> <p>While not required, you can use a MITRE ATT&amp;CK® software name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">AdFind</code></p>"
 }, {
   "fieldName" : "threat.software.platforms",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The platforms of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®. While not required, you can use a MITRE ATT&amp;CK® software platforms.</p> <p>Recommended Values:</p> <p> * AWS</p> <p> * Azure</p> <p> * Azure AD</p> <p> * GCP</p> <p> * Linux</p> <p> * macOS</p> <p> * Network</p> <p> * Office 365</p> <p> * SaaS</p> <p> * Windows</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[ \"Windows\" ]</code></p>"
+  "fieldDescription" : "<p>The platforms of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®.</p> <p>Recommended Values:</p> <p> * AWS</p> <p> * Azure</p> <p> * Azure AD</p> <p> * GCP</p> <p> * Linux</p> <p> * macOS</p> <p> * Network</p> <p> * Office 365</p> <p> * SaaS</p> <p> * Windows</p> <p>While not required, you can use a MITRE ATT&amp;CK® software platforms.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[ \"Windows\" ]</code></p>"
 }, {
   "fieldName" : "threat.software.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The reference URL of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®. While not required, you can use a MITRE ATT&amp;CK® software reference URL.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">https://attack.mitre.org/software/S0552/</code></p>"
+  "fieldDescription" : "<p>The reference URL of the software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®.</p> <p>While not required, you can use a MITRE ATT&amp;CK® software reference URL.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">https://attack.mitre.org/software/S0552/</code></p>"
 }, {
   "fieldName" : "threat.software.type",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®. While not required, you can use a MITRE ATT&amp;CK® software type.</p> <p>Recommended values</p> <p> * Malware</p> <p> * Tool</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Tool</code></p>"
+  "fieldDescription" : "<p>The type of software used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®.</p> <p>Recommended values</p> <p> * Malware</p> <p> * Tool</p> <p> While not required, you can use a MITRE ATT&amp;CK® software type.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Tool</code></p>"
 }, {
   "fieldName" : "threat.tactic.id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4107,7 +4177,7 @@
   "fieldName" : "threat.technique.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The name of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.name.text (type: text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Command and Scripting Interpreter</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>The name of technique used by this threat. You can use a MITRE ATT&amp;CK® technique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.name.text (type: match_only_text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">Command and Scripting Interpreter</code></p>"
 }, {
   "fieldName" : "threat.technique.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4122,7 +4192,7 @@
   "fieldName" : "threat.technique.subtechnique.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The name of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.subtechnique.name.text (type: text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">PowerShell</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>The name of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* threat.technique.subtechnique.name.text (type: match_only_text)</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">PowerShell</code></p>"
 }, {
   "fieldName" : "threat.technique.subtechnique.reference",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4137,7 +4207,7 @@
   "fieldName" : "threat.enrichments.indicator.as.organization.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.accessed",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4178,6 +4248,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>File extension, excluding the leading dot.</p> <p>Note that when the file name has multiple extensions (example.tar.gz), only the last one should be captured (\"gz\", not \"tar.gz\").</p> <p>type: keyword</p> <p>example: <code class=\"literal\">png</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.fork_name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A fork is additional data associated with a filesystem object.</p> <p>On Linux, a resource fork is used to store additional data with a filesystem object. A file always has at least one fork for the data portion, and additional forks may exist.</p> <p>On NTFS, this is analogous to an Alternate Data Stream (ADS), and the default data stream for a file is just called $DATA. Zone.Identifier is commonly used by Windows to track contents downloaded from the Internet. An ADS is typically of the form: <code class=\"literal\">C:\\path\\to\\filename.extension:some_fork_name</code>, and <code class=\"literal\">some_fork_name</code> is the value that should populate <code class=\"literal\">fork_name</code>. <code class=\"literal\">filename.extension</code> should populate <code class=\"literal\">file.name</code>, and <code class=\"literal\">extension</code> should populate <code class=\"literal\">file.extension</code>. The full path, <code class=\"literal\">file.path</code>, will include the fork name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Zone.Identifer</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.gid",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4222,7 +4297,7 @@
   "fieldName" : "threat.enrichments.indicator.file.path",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Full path to the file, including the file name. It should include the drive letter, when appropriate.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.path.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice/example.png</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Full path to the file, including the file name. It should include the drive letter, when appropriate.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.path.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/home/alice/example.png</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.size",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4232,7 +4307,7 @@
   "fieldName" : "threat.enrichments.indicator.file.target_path",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Target path for symlinks.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.target_path.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Target path for symlinks.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.target_path.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.type",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4243,6 +4318,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The user ID (UID) or security identifier (SID) of the file owner.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1001</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.code_signature.digest_algorithm",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The hashing algorithm used to sign the process.</p> <p>This value can distinguish signatures when a file is signed multiple times by the same signer but with a different digest algorithm.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">sha256</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.code_signature.exists",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4268,6 +4348,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.code_signature.timestamp",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Date and time when the code signature was generated and signed.</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-01-01T12:10:30Z</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.code_signature.trusted",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4659,66 +4744,6 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
-  "fieldName" : "threat.enrichments.indicator.hash.md5",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>MD5 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.hash.sha1",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SHA1 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.hash.sha256",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SHA256 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.hash.sha512",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.hash.ssdeep",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SSDEEP hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.architecture",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>CPU architecture target for the file.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">x64</code></p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.company",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal company name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.description",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal description of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Paint</code></p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.file_version",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.imphash",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.original_file_name",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">MSPAINT.EXE</code></p>"
-}, {
-  "fieldName" : "threat.enrichments.indicator.pe.product",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
-}, {
   "fieldName" : "threat.enrichments.indicator.registry.data.bytes",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -4727,7 +4752,7 @@
   "fieldName" : "threat.enrichments.indicator.registry.data.strings",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Content when writing string types.</p> <p>Populated as an array when writing string data to the registry. For single string registry types (REG_SZ, REG_EXPAND_SZ), this should be an array with one string. For sequences of string with REG_MULTI_SZ, this array will be variable length. For numeric data, such as REG_DWORD and REG_QWORD, this should be populated with the decimal representation (e.g <code class=\"literal\">\"1\"</code>).</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"C:\\rta\\red_ttp\\bin\\myapp.exe\"]</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">wildcard</code> data type for this field is currently beta. </span> </span></p> <p>Content when writing string types.</p> <p>Populated as an array when writing string data to the registry. For single string registry types (REG_SZ, REG_EXPAND_SZ), this should be an array with one string. For sequences of string with REG_MULTI_SZ, this array will be variable length. For numeric data, such as REG_DWORD and REG_QWORD, this should be populated with the decimal representation (e.g <code class=\"literal\">\"1\"</code>).</p> <p>type: wildcard</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"C:\\rta\\red_ttp\\bin\\myapp.exe\"]</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.registry.data.type",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4772,12 +4797,12 @@
   "fieldName" : "threat.enrichments.indicator.url.full",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>If full URLs are important to your use case, they should be stored in <code class=\"literal\">url.full</code>, whether this field is reconstructed or present in the event source.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* url.full.text (type: text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta </span> </span></p> <p>If full URLs are important to your use case, they should be stored in <code class=\"literal\">url.full</code>, whether this field is reconstructed or present in the event source.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* url.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.url.original",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unmodified original url as seen in the event source.</p> <p>Note that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.</p> <p>This field is meant to represent the URL as it was observed, complete or not.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* url.original.text (type: text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>Unmodified original url as seen in the event source.</p> <p>Note that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.</p> <p>This field is meant to represent the URL as it was observed, complete or not.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* url.original.text (type: match_only_text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.url.password",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4787,7 +4812,7 @@
   "fieldName" : "threat.enrichments.indicator.url.path",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Path of the request, such as \"/search\".</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">wildcard</code> data type for this field is currently beta. </span> </span></p> <p>Path of the request, such as \"/search\".</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.url.port",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4952,7 +4977,7 @@
   "fieldName" : "threat.indicator.as.organization.name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Organization name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* as.organization.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Google LLC</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.accessed",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -4993,6 +5018,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>File extension, excluding the leading dot.</p> <p>Note that when the file name has multiple extensions (example.tar.gz), only the last one should be captured (\"gz\", not \"tar.gz\").</p> <p>type: keyword</p> <p>example: <code class=\"literal\">png</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.fork_name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A fork is additional data associated with a filesystem object.</p> <p>On Linux, a resource fork is used to store additional data with a filesystem object. A file always has at least one fork for the data portion, and additional forks may exist.</p> <p>On NTFS, this is analogous to an Alternate Data Stream (ADS), and the default data stream for a file is just called $DATA. Zone.Identifier is commonly used by Windows to track contents downloaded from the Internet. An ADS is typically of the form: <code class=\"literal\">C:\\path\\to\\filename.extension:some_fork_name</code>, and <code class=\"literal\">some_fork_name</code> is the value that should populate <code class=\"literal\">fork_name</code>. <code class=\"literal\">filename.extension</code> should populate <code class=\"literal\">file.name</code>, and <code class=\"literal\">extension</code> should populate <code class=\"literal\">file.extension</code>. The full path, <code class=\"literal\">file.path</code>, will include the fork name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Zone.Identifer</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.gid",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5037,7 +5067,7 @@
   "fieldName" : "threat.indicator.file.path",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Full path to the file, including the file name. It should include the drive letter, when appropriate.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.path.text (type: text)</p> <p>example: <code class=\"literal\">/home/alice/example.png</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Full path to the file, including the file name. It should include the drive letter, when appropriate.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.path.text (type: match_only_text)</p> <p>example: <code class=\"literal\">/home/alice/example.png</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.size",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5047,7 +5077,7 @@
   "fieldName" : "threat.indicator.file.target_path",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Target path for symlinks.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.target_path.text (type: text)</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Target path for symlinks.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* file.target_path.text (type: match_only_text)</p>"
 }, {
   "fieldName" : "threat.indicator.file.type",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5058,6 +5088,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The user ID (UID) or security identifier (SID) of the file owner.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1001</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.code_signature.digest_algorithm",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The hashing algorithm used to sign the process.</p> <p>This value can distinguish signatures when a file is signed multiple times by the same signer but with a different digest algorithm.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">sha256</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.code_signature.exists",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5083,6 +5118,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The team identifier used to sign the process.</p> <p>This is used to identify the team or vendor of a software product. The field is relevant to Apple *OS only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">EQHXZ8M8AV</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.code_signature.timestamp",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Date and time when the code signature was generated and signed.</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-01-01T12:10:30Z</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.code_signature.trusted",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5474,66 +5514,6 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>The time zone of the location, such as IANA time zone name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">America/Argentina/Buenos_Aires</code></p>"
 }, {
-  "fieldName" : "threat.indicator.hash.md5",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>MD5 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.indicator.hash.sha1",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SHA1 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.indicator.hash.sha256",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SHA256 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.indicator.hash.sha512",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SHA512 hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.indicator.hash.ssdeep",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>SSDEEP hash.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "threat.indicator.pe.architecture",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>CPU architecture target for the file.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">x64</code></p>"
-}, {
-  "fieldName" : "threat.indicator.pe.company",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal company name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft Corporation</code></p>"
-}, {
-  "fieldName" : "threat.indicator.pe.description",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal description of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Paint</code></p>"
-}, {
-  "fieldName" : "threat.indicator.pe.file_version",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
-}, {
-  "fieldName" : "threat.indicator.pe.imphash",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
-}, {
-  "fieldName" : "threat.indicator.pe.original_file_name",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">MSPAINT.EXE</code></p>"
-}, {
-  "fieldName" : "threat.indicator.pe.product",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
-}, {
   "fieldName" : "threat.indicator.registry.data.bytes",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -5542,7 +5522,7 @@
   "fieldName" : "threat.indicator.registry.data.strings",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Content when writing string types.</p> <p>Populated as an array when writing string data to the registry. For single string registry types (REG_SZ, REG_EXPAND_SZ), this should be an array with one string. For sequences of string with REG_MULTI_SZ, this array will be variable length. For numeric data, such as REG_DWORD and REG_QWORD, this should be populated with the decimal representation (e.g <code class=\"literal\">\"1\"</code>).</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"C:\\rta\\red_ttp\\bin\\myapp.exe\"]</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">wildcard</code> data type for this field is currently beta. </span> </span></p> <p>Content when writing string types.</p> <p>Populated as an array when writing string data to the registry. For single string registry types (REG_SZ, REG_EXPAND_SZ), this should be an array with one string. For sequences of string with REG_MULTI_SZ, this array will be variable length. For numeric data, such as REG_DWORD and REG_QWORD, this should be populated with the decimal representation (e.g <code class=\"literal\">\"1\"</code>).</p> <p>type: wildcard</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"C:\\rta\\red_ttp\\bin\\myapp.exe\"]</code></p>"
 }, {
   "fieldName" : "threat.indicator.registry.data.type",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5587,12 +5567,12 @@
   "fieldName" : "threat.indicator.url.full",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>If full URLs are important to your use case, they should be stored in <code class=\"literal\">url.full</code>, whether this field is reconstructed or present in the event source.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* url.full.text (type: text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta </span> </span></p> <p>If full URLs are important to your use case, they should be stored in <code class=\"literal\">url.full</code>, whether this field is reconstructed or present in the event source.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* url.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top</code></p>"
 }, {
   "fieldName" : "threat.indicator.url.original",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unmodified original url as seen in the event source.</p> <p>Note that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.</p> <p>This field is meant to represent the URL as it was observed, complete or not.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* url.original.text (type: text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>Unmodified original url as seen in the event source.</p> <p>Note that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.</p> <p>This field is meant to represent the URL as it was observed, complete or not.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* url.original.text (type: match_only_text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch</code></p>"
 }, {
   "fieldName" : "threat.indicator.url.password",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -5602,7 +5582,7 @@
   "fieldName" : "threat.indicator.url.path",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Path of the request, such as \"/search\".</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">wildcard</code> data type for this field is currently beta. </span> </span></p> <p>Path of the request, such as \"/search\".</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "threat.indicator.url.port",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -6177,12 +6157,12 @@
   "fieldName" : "url.full",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>If full URLs are important to your use case, they should be stored in <code class=\"literal\">url.full</code>, whether this field is reconstructed or present in the event source.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* url.full.text (type: text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta </span> </span></p> <p>If full URLs are important to your use case, they should be stored in <code class=\"literal\">url.full</code>, whether this field is reconstructed or present in the event source.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* url.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top</code></p>"
 }, {
   "fieldName" : "url.original",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unmodified original url as seen in the event source.</p> <p>Note that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.</p> <p>This field is meant to represent the URL as it was observed, complete or not.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* url.original.text (type: text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of <code class=\"literal\">wildcard</code> as the primary type and <code class=\"literal\">match_only_type</code> as the <code class=\"literal\">.text</code> multi-field type are both currently beta. </span> </span></p> <p>Unmodified original url as seen in the event source.</p> <p>Note that in network monitoring, the observed URL may be a full URL, whereas in access logs, the URL is often just represented as a path.</p> <p>This field is meant to represent the URL as it was observed, complete or not.</p> <p>type: wildcard</p> <p>Multi-fields:</p> <p>* url.original.text (type: match_only_text)</p> <p>example: <code class=\"literal\">https://www.elastic.co:443/search?q=elasticsearch#top or /search?q=elasticsearch</code></p>"
 }, {
   "fieldName" : "url.password",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
@@ -6192,7 +6172,7 @@
   "fieldName" : "url.path",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Path of the request, such as \"/search\".</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">wildcard</code> data type for this field is currently beta. </span> </span></p> <p>Path of the request, such as \"/search\".</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "url.port",
   "fieldSet" : "<abbr title='Fields that let you store URLs in various forms.'>URL</abbr>",
@@ -6242,7 +6222,7 @@
   "fieldName" : "user.full_name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "user.hash",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6252,12 +6232,12 @@
   "fieldName" : "user.id",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "user.name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "user.roles",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6277,7 +6257,7 @@
   "fieldName" : "user.changes.full_name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "user.changes.hash",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6287,12 +6267,12 @@
   "fieldName" : "user.changes.id",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "user.changes.name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "user.changes.roles",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6312,7 +6292,7 @@
   "fieldName" : "user.effective.full_name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "user.effective.hash",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6322,12 +6302,12 @@
   "fieldName" : "user.effective.id",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "user.effective.name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "user.effective.roles",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6362,7 +6342,7 @@
   "fieldName" : "user.target.full_name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>User’s full name, if available.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.full_name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Albert Einstein</code></p>"
 }, {
   "fieldName" : "user.target.hash",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6372,12 +6352,12 @@
   "fieldName" : "user.target.id",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Unique identifier of the user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">S-1-5-21-202424912787-2692429404-2351956786-1000</code></p>"
 }, {
   "fieldName" : "user.target.name",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: text)</p> <p>example: <code class=\"literal\">albert</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Short name or login of the user.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">a.einstein</code></p>"
 }, {
   "fieldName" : "user.target.roles",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
@@ -6397,7 +6377,7 @@
   "fieldName" : "user_agent.original",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unparsed user_agent string.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user_agent.original.text (type: text)</p> <p>example: <code class=\"literal\">Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Unparsed user_agent string.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* user_agent.original.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mozilla/5.0 (iPhone; CPU iPhone OS 12_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1</code></p>"
 }, {
   "fieldName" : "user_agent.version",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
@@ -6412,7 +6392,7 @@
   "fieldName" : "user_agent.os.full",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, including the version or code name.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.full.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS Mojave</code></p>"
 }, {
   "fieldName" : "user_agent.os.kernel",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
@@ -6422,7 +6402,7 @@
   "fieldName" : "user_agent.os.name",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>Operating system name, without the version.</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* os.name.text (type: match_only_text)</p> <p>example: <code class=\"literal\">Mac OS X</code></p>"
 }, {
   "fieldName" : "user_agent.os.platform",
   "fieldSet" : "<abbr title='Fields to describe a browser user_agent string.'>User agent</abbr>",
@@ -6462,7 +6442,7 @@
   "fieldName" : "vulnerability.description",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The description of the vulnerability that provides additional context of the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#cve_entry_descriptions_created\" class=\"ulink\" target=\"_blank\">Common Vulnerabilities and Exposure CVE description</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* vulnerability.description.text (type: text)</p> <p>example: <code class=\"literal\">In macOS before 2.12.6, there is a vulnerability in the RPC...</code></p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> Use of the <code class=\"literal\">match_only_text</code> type in the <code class=\"literal\">.text</code> multi-field is currently beta. </span> </span></p> <p>The description of the vulnerability that provides additional context of the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#cve_entry_descriptions_created\" class=\"ulink\" target=\"_blank\">Common Vulnerabilities and Exposure CVE description</a>)</p> <p>type: keyword</p> <p>Multi-fields:</p> <p>* vulnerability.description.text (type: match_only_text)</p> <p>example: <code class=\"literal\">In macOS before 2.12.6, there is a vulnerability in the RPC...</code></p>"
 }, {
   "fieldName" : "vulnerability.enumeration",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
