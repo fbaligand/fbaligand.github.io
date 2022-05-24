@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $("#ecs-fields").DataTable({
         "ajax": {
-            "url": "./ecs-fields.json?v=8.1",
+            "url": "./ecs-fields.json?v=8.2",
             "dataSrc": ""
         },
         "paging": false,
