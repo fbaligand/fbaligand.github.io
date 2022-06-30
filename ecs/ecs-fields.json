@@ -552,22 +552,27 @@
   "fieldName" : "container.cpu.usage",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1. Scaling factor: 1000.</p> <p>type: scaled_float</p>"
+  "fieldDescription" : "<p>Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1. Scaling factor: 1000.</p> <p>type: scaled_float</p>"
 }, {
   "fieldName" : "container.disk.read.bytes",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes (gauge) read successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes (gauge) read successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "container.disk.write.bytes",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes (gauge) written successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes (gauge) written successfully (aggregated from all disks) since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "container.id",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Unique container id.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "container.image.hash.all",
+  "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array of digests of the image the container was built on. Each digest consists of the hash algorithm and value in this format: <code class=\"literal\">algorithm:value</code>. Algorithm names should align with the field names in the ECS hash field set.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[sha256:f8fefc80e3273dc756f288a63945820d6476ad64883892c771b5e2ece6bf1b26]</code></p>"
 }, {
   "fieldName" : "container.image.name",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
@@ -587,7 +592,7 @@
   "fieldName" : "container.memory.usage",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Memory usage percentage and it ranges from 0 to 1. Scaling factor: 1000.</p> <p>type: scaled_float</p>"
+  "fieldDescription" : "<p>Memory usage percentage and it ranges from 0 to 1. Scaling factor: 1000.</p> <p>type: scaled_float</p>"
 }, {
   "fieldName" : "container.name",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
@@ -597,12 +602,12 @@
   "fieldName" : "container.network.egress.bytes",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of bytes (gauge) sent out on all network interfaces by the container since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The number of bytes (gauge) sent out on all network interfaces by the container since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "container.network.ingress.bytes",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of bytes received (gauge) on all network interfaces by the container since the last metric collection.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The number of bytes received (gauge) on all network interfaces by the container since the last metric collection.</p> <p>type: long</p>"
 }, {
   "fieldName" : "container.runtime",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
@@ -1442,7 +1447,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.2/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.3/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1487,7 +1492,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.2/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.3/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1502,7 +1507,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.2/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.3/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1552,7 +1557,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.2/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.3/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -2017,12 +2022,12 @@
   "fieldName" : "file.x509.not_after",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "file.x509.not_before",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "file.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2839,6 +2844,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>API version being used to carry out the action</p> <p>type: keyword</p> <p>example: <code class=\"literal\">v1beta1</code></p>"
 }, {
+  "fieldName" : "orchestrator.cluster.id",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique ID of the cluster.</p> <p>type: keyword</p>"
+}, {
   "fieldName" : "orchestrator.cluster.name",
   "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
   "fieldLevel" : "extended",
@@ -2864,10 +2874,25 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Organization affected by the event (for multi-tenant orchestrator setups).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">elastic</code></p>"
 }, {
+  "fieldName" : "orchestrator.resource.id",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique ID of the resource being acted upon.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "orchestrator.resource.ip",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>IP address assigned to the resource associated with the event being observed. In the case of a Kubernetes Pod, this array would contain only one element: the IP of the Pod (as opposed to the Node on which the Pod is running).</p> <p>type: ip</p> <p>Note: this field should contain an array of values.</p>"
+}, {
   "fieldName" : "orchestrator.resource.name",
   "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the resource being acted upon.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">test-pod-cdcws</code></p>"
+}, {
+  "fieldName" : "orchestrator.resource.parent.type",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Type or kind of the parent resource associated with the event being observed. In Kubernetes, this will be the name of a built-in workload resource (e.g., Deployment, StatefulSet, DaemonSet).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">DaemonSet</code></p>"
 }, {
   "fieldName" : "orchestrator.resource.type",
   "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
@@ -5779,6 +5804,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of a service node.</p> <p>This allows for two nodes of the same service running on the same host to be differentiated. Therefore, <code class=\"literal\">service.node.name</code> should typically be unique across nodes of a given service.</p> <p>In the case of Elasticsearch, the <code class=\"literal\">service.node.name</code> could contain the unique node name within the Elasticsearch cluster. In cases where the service doesn’t have the concept of a node name, the host name or container name can be used to distinguish running instances that make up this service. If those do not provide uniqueness (e.g. multiple instances of the service running on the same host) - the node name can be manually set.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">instance-0000000016</code></p>"
 }, {
+  "fieldName" : "service.node.role",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Deprecated for removal in next major version release. This field will be superseded by <code class=\"literal\">node.roles</code>.</p> <p>Role of a service node.</p> <p>This allows for distinction between different running roles of the same service.</p> <p>In the case of Kibana, the <code class=\"literal\">service.node.role</code> could be <code class=\"literal\">ui</code> or <code class=\"literal\">background-tasks</code>.</p> <p>In the case of Elasticsearch, the <code class=\"literal\">service.node.role</code> could be <code class=\"literal\">master</code> or <code class=\"literal\">data</code>.</p> <p>Other services could use this to distinguish between a <code class=\"literal\">web</code> and <code class=\"literal\">worker</code> role running as part of the service.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">background-tasks</code></p>"
+}, {
   "fieldName" : "service.state",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
   "fieldLevel" : "core",
@@ -5824,6 +5854,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of a service node.</p> <p>This allows for two nodes of the same service running on the same host to be differentiated. Therefore, <code class=\"literal\">service.node.name</code> should typically be unique across nodes of a given service.</p> <p>In the case of Elasticsearch, the <code class=\"literal\">service.node.name</code> could contain the unique node name within the Elasticsearch cluster. In cases where the service doesn’t have the concept of a node name, the host name or container name can be used to distinguish running instances that make up this service. If those do not provide uniqueness (e.g. multiple instances of the service running on the same host) - the node name can be manually set.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">instance-0000000016</code></p>"
 }, {
+  "fieldName" : "service.origin.node.role",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Deprecated for removal in next major version release. This field will be superseded by <code class=\"literal\">node.roles</code>.</p> <p>Role of a service node.</p> <p>This allows for distinction between different running roles of the same service.</p> <p>In the case of Kibana, the <code class=\"literal\">service.node.role</code> could be <code class=\"literal\">ui</code> or <code class=\"literal\">background-tasks</code>.</p> <p>In the case of Elasticsearch, the <code class=\"literal\">service.node.role</code> could be <code class=\"literal\">master</code> or <code class=\"literal\">data</code>.</p> <p>Other services could use this to distinguish between a <code class=\"literal\">web</code> and <code class=\"literal\">worker</code> role running as part of the service.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">background-tasks</code></p>"
+}, {
   "fieldName" : "service.origin.state",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
   "fieldLevel" : "core",
@@ -5868,6 +5903,11 @@
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of a service node.</p> <p>This allows for two nodes of the same service running on the same host to be differentiated. Therefore, <code class=\"literal\">service.node.name</code> should typically be unique across nodes of a given service.</p> <p>In the case of Elasticsearch, the <code class=\"literal\">service.node.name</code> could contain the unique node name within the Elasticsearch cluster. In cases where the service doesn’t have the concept of a node name, the host name or container name can be used to distinguish running instances that make up this service. If those do not provide uniqueness (e.g. multiple instances of the service running on the same host) - the node name can be manually set.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">instance-0000000016</code></p>"
+}, {
+  "fieldName" : "service.target.node.role",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Deprecated for removal in next major version release. This field will be superseded by <code class=\"literal\">node.roles</code>.</p> <p>Role of a service node.</p> <p>This allows for distinction between different running roles of the same service.</p> <p>In the case of Kibana, the <code class=\"literal\">service.node.role</code> could be <code class=\"literal\">ui</code> or <code class=\"literal\">background-tasks</code>.</p> <p>In the case of Elasticsearch, the <code class=\"literal\">service.node.role</code> could be <code class=\"literal\">master</code> or <code class=\"literal\">data</code>.</p> <p>Other services could use this to distinguish between a <code class=\"literal\">web</code> and <code class=\"literal\">worker</code> role running as part of the service.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">background-tasks</code></p>"
 }, {
   "fieldName" : "service.target.state",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
@@ -6267,7 +6307,7 @@
   "fieldName" : "threat.enrichments.matched.occurred",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Indicates when the indicator match was generated</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-10-05 17:00:58.326000+00:00</code></p>"
+  "fieldDescription" : "<p>Indicates when the indicator match was generated</p> <p>type: date</p> <p>example: <code class=\"literal\">2021-10-05T17:00:58.326Z</code></p>"
 }, {
   "fieldName" : "threat.enrichments.matched.type",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -6892,12 +6932,12 @@
   "fieldName" : "threat.enrichments.indicator.file.x509.not_after",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.x509.not_before",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7172,12 +7212,12 @@
   "fieldName" : "threat.enrichments.indicator.x509.not_after",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.x509.not_before",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7677,12 +7717,12 @@
   "fieldName" : "threat.indicator.file.x509.not_after",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.x509.not_before",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7957,12 +7997,12 @@
   "fieldName" : "threat.indicator.x509.not_after",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "threat.indicator.x509.not_before",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "threat.indicator.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -8222,12 +8262,12 @@
   "fieldName" : "tls.client.x509.not_after",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "tls.client.x509.not_before",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "tls.client.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -8342,12 +8382,12 @@
   "fieldName" : "tls.server.x509.not_after",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "tls.server.x509.not_before",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "tls.server.x509.public_key_algorithm",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -8832,12 +8872,12 @@
   "fieldName" : "x509.not_after",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16 03:15:39+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is no longer considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-07-16T03:15:39Z</code></p>"
 }, {
   "fieldName" : "x509.not_before",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16 01:40:25+00:00</code></p>"
+  "fieldDescription" : "<p>Time at which the certificate is first considered valid.</p> <p>type: date</p> <p>example: <code class=\"literal\">2019-08-16T01:40:25Z</code></p>"
 }, {
   "fieldName" : "x509.public_key_algorithm",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
