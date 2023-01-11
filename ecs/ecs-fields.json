@@ -969,6 +969,26 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
 }, {
+  "fieldName" : "device.id",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The unique identifier of a device. The identifier must not change across application sessions but stay fixex for an instance of a (mobile) device.</p> <p>On iOS, this value must be equal to the vendor identifier (<a href=\"https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor\" class=\"ulink\" target=\"_blank\">https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor</a>). On Android, this value must be equal to the Firebase Installation ID or a globally unique UUID which is persisted across sessions in your application.</p> <p>For GDPR and data protection law reasons this identifier should not carry information that would allow to identify a user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00000000-54b3-e7c7-0000-000046bffd97</code></p>"
+}, {
+  "fieldName" : "device.manufacturer",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The vendor name of the device manufacturer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Samsung</code></p>"
+}, {
+  "fieldName" : "device.model.identifier",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The machine readable identifier of the device model.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">SM-G920F</code></p>"
+}, {
+  "fieldName" : "device.model.name",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The human readable marketing name of the device model.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Samsung Galaxy S6</code></p>"
+}, {
   "fieldName" : "dll.name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "core",
@@ -1507,7 +1527,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.5/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1552,7 +1572,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.5/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1567,7 +1587,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.5/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1617,7 +1637,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.5/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -3207,12 +3227,12 @@
   "fieldName" : "process.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3227,12 +3247,12 @@
   "fieldName" : "process.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3767,12 +3787,12 @@
   "fieldName" : "process.entry_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3787,12 +3807,12 @@
   "fieldName" : "process.entry_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3937,12 +3957,12 @@
   "fieldName" : "process.entry_leader.parent.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3957,12 +3977,12 @@
   "fieldName" : "process.entry_leader.parent.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4107,12 +4127,12 @@
   "fieldName" : "process.entry_leader.parent.session_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4127,12 +4147,12 @@
   "fieldName" : "process.entry_leader.parent.session_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4602,12 +4622,12 @@
   "fieldName" : "process.group_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4622,12 +4642,12 @@
   "fieldName" : "process.group_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4807,12 +4827,12 @@
   "fieldName" : "process.parent.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4827,12 +4847,12 @@
   "fieldName" : "process.parent.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4977,12 +4997,12 @@
   "fieldName" : "process.parent.group_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4997,12 +5017,12 @@
   "fieldName" : "process.parent.group_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5187,12 +5207,12 @@
   "fieldName" : "process.previous.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5207,12 +5227,12 @@
   "fieldName" : "process.previous.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5757,12 +5777,12 @@
   "fieldName" : "process.session_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5777,12 +5797,12 @@
   "fieldName" : "process.session_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5927,12 +5947,12 @@
   "fieldName" : "process.session_leader.parent.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5947,12 +5967,12 @@
   "fieldName" : "process.session_leader.parent.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6097,12 +6117,12 @@
   "fieldName" : "process.session_leader.parent.session_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6117,12 +6137,12 @@
   "fieldName" : "process.session_leader.parent.session_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: number</p>"
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -7364,10 +7384,10 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The date and time when intelligence source last reported sighting this indicator.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-11-05T17:25:47.000Z</code></p>"
 }, {
-  "fieldName" : "threat.enrichments.indicator.marking.tlp",
+  "fieldName" : "threat.enrichments.indicator.marking.tlp.version",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Traffic Light Protocol sharing markings.</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">WHITE</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">GREEN</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">RED</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">WHITE</code></p>"
+  "fieldDescription" : "<p>Traffic Light Protocol version.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.modified_at",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7512,7 +7532,7 @@
   "fieldName" : "threat.indicator.marking.tlp",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Traffic Light Protocol sharing markings.</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">WHITE</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">GREEN</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">RED</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">WHITE</code></p>"
+  "fieldDescription" : "<p>Traffic Light Protocol sharing markings.</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">WHITE</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">CLEAR</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">GREEN</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER+STRICT</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">RED</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">CLEAR</code></p>"
 }, {
   "fieldName" : "threat.indicator.modified_at",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7623,6 +7643,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The reference url of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/techniques/T1059/001/</code></p>"
+}, {
+  "fieldName" : "threat.threat.indicator.marking.tlp.version",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Traffic Light Protocol version.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.as.number",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
