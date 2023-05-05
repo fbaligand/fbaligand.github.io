@@ -1,10 +1,11 @@
 $(document).ready(function () {
     $("#ecs-fields").DataTable({
         "ajax": {
-            "url": "./ecs-fields.json?v=8.6",
+            "url": "./ecs-fields.json?v=8.7",
             "dataSrc": ""
         },
-        "paging": false,
+        "paging": true,
+        "pageLength": 500,
         "responsive": true,
         "fixedHeader": true,
         "language": {

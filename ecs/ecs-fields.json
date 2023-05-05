@@ -1099,10 +1099,55 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
 }, {
+  "fieldName" : "dll.pe.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a PE file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "dll.pe.go_imports",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "dll.pe.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "dll.pe.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "dll.pe.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "dll.pe.imphash",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "dll.pe.import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "dll.pe.imports",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "dll.pe.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "dll.pe.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "dll.pe.original_file_name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -1118,6 +1163,36 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "dll.pe.sections",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the PE file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">pe.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "dll.pe.sections.entropy",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "dll.pe.sections.name",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "dll.pe.sections.physical_size",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "dll.pe.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "dll.pe.sections.virtual_size",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
 }, {
   "fieldName" : "dns.answers",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
@@ -1239,6 +1314,31 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of exported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
 }, {
+  "fieldName" : "elf.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in an ELF file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "elf.go_imports",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "elf.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "elf.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "elf.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "elf.header.abi_version",
   "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
   "fieldLevel" : "extended",
@@ -1279,10 +1379,25 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Version of the ELF header.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "elf.import_hash",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in an ELF file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is an ELF implementation of the Windows PE imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
   "fieldName" : "elf.imports",
   "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "elf.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "elf.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "elf.sections",
   "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
@@ -1323,6 +1438,11 @@
   "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>ELF Section List type.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "elf.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
 }, {
   "fieldName" : "elf.sections.virtual_address",
   "fieldSet" : "<abbr title='These fields contain Linux Executable Linkable Format (ELF) metadata.'>ELF Header</abbr>",
@@ -1527,7 +1647,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1572,7 +1692,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1587,7 +1707,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1637,7 +1757,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.6/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1864,6 +1984,31 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of exported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
 }, {
+  "fieldName" : "file.elf.go_import_hash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in an ELF file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "file.elf.go_imports",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "file.elf.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.elf.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.elf.go_stripped",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "file.elf.header.abi_version",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
@@ -1904,10 +2049,25 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Version of the ELF header.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "file.elf.import_hash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in an ELF file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is an ELF implementation of the Windows PE imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
   "fieldName" : "file.elf.imports",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "file.elf.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.elf.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "file.elf.sections",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -1948,6 +2108,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>ELF Section List type.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.elf.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
 }, {
   "fieldName" : "file.elf.sections.virtual_address",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2019,6 +2184,86 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>TLSH hash.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "file.macho.go_import_hash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a Mach-O file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "file.macho.go_imports",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "file.macho.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.go_stripped",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "file.macho.import_hash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for symhash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "file.macho.imports",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "file.macho.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.sections",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the Mach-O file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">macho.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "file.macho.sections.entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.sections.name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.macho.sections.physical_size",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.sections.virtual_size",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.macho.symhash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a Mach-O implementation of the Windows PE imphash</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d3ccf195b62a9279c3c19af1080497ec</code></p>"
+}, {
   "fieldName" : "file.pe.architecture",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
@@ -2039,10 +2284,55 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
 }, {
+  "fieldName" : "file.pe.go_import_hash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a PE file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "file.pe.go_imports",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "file.pe.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.pe.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.pe.go_stripped",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "file.pe.imphash",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "file.pe.import_hash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "file.pe.imports",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "file.pe.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.pe.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "file.pe.original_file_name",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2058,6 +2348,36 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "file.pe.sections",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the PE file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">pe.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "file.pe.sections.entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.pe.sections.name",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.pe.sections.physical_size",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.pe.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "file.pe.sections.virtual_size",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
 }, {
   "fieldName" : "file.x509.alternative_names",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2337,7 +2657,7 @@
   "fieldName" : "host.name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Name of the host.</p> <p>It can contain what <code class=\"literal\">hostname</code> returns on Unix systems, the fully qualified domain name, or a name specified by the user. The sender decides which value to use.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>Name of the host.</p> <p>It can contain what hostname returns on Unix systems, the fully qualified domain name (FQDN), or a name specified by the user. The recommended value is the lowercase FQDN of the host.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "host.network.egress.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2663,6 +2983,86 @@
   "fieldSet" : "<abbr title='Details about the event’s logging mechanism.'>Log</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The version of the Syslog protocol specification. Only applicable for RFC 5424 messages.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">1</code></p>"
+}, {
+  "fieldName" : "macho.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a Mach-O file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "macho.go_imports",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "macho.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "macho.import_hash",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for symhash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "macho.imports",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "macho.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.sections",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the Mach-O file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">macho.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "macho.sections.entropy",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.sections.name",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "macho.sections.physical_size",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.sections.virtual_size",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "macho.symhash",
+  "fieldSet" : "<abbr title='These fields contain Mac OS Mach Object file format (Mach-O) metadata.'>Mach-O Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a Mach-O implementation of the Windows PE imphash</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d3ccf195b62a9279c3c19af1080497ec</code></p>"
 }, {
   "fieldName" : "network.application",
   "fieldSet" : "<abbr title='Fields describing the communication path over which the event happened.'>Network</abbr>",
@@ -3144,10 +3544,55 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
 }, {
+  "fieldName" : "pe.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a PE file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "pe.go_imports",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "pe.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "pe.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "pe.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "pe.imphash",
   "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "pe.import_hash",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "pe.imports",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "pe.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "pe.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "pe.original_file_name",
   "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
@@ -3163,6 +3608,36 @@
   "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "pe.sections",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the PE file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">pe.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "pe.sections.entropy",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "pe.sections.name",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "pe.sections.physical_size",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "pe.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "pe.sections.virtual_size",
+  "fieldSet" : "<abbr title='These fields contain Windows Portable Executable (PE) metadata.'>PE Header</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.args",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3604,6 +4079,31 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of exported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
 }, {
+  "fieldName" : "process.elf.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in an ELF file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "process.elf.go_imports",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "process.elf.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.elf.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.elf.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "process.elf.header.abi_version",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -3644,10 +4144,25 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Version of the ELF header.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "process.elf.import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in an ELF file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is an ELF implementation of the Windows PE imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
   "fieldName" : "process.elf.imports",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "process.elf.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.elf.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.elf.sections",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3688,6 +4203,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>ELF Section List type.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.elf.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.elf.sections.virtual_address",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4764,6 +5284,86 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>TLSH hash.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "process.macho.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a Mach-O file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "process.macho.go_imports",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "process.macho.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "process.macho.import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for symhash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "process.macho.imports",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "process.macho.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.sections",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the Mach-O file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">macho.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "process.macho.sections.entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.sections.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.macho.sections.physical_size",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.sections.virtual_size",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.macho.symhash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a Mach-O implementation of the Windows PE imphash</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d3ccf195b62a9279c3c19af1080497ec</code></p>"
+}, {
   "fieldName" : "process.parent.args",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -5124,10 +5724,55 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
 }, {
+  "fieldName" : "process.pe.go_import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a PE file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "process.pe.go_imports",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "process.pe.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.pe.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.pe.go_stripped",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "process.pe.imphash",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "process.pe.import_hash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "process.pe.imports",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "process.pe.imports_names_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.pe.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.pe.original_file_name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5143,6 +5788,36 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "process.pe.sections",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the PE file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">pe.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "process.pe.sections.entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.pe.sections.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.pe.sections.physical_size",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.pe.sections.var_entropy",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.pe.sections.virtual_size",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.args",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -7384,7 +8059,12 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The date and time when intelligence source last reported sighting this indicator.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-11-05T17:25:47.000Z</code></p>"
 }, {
-  "fieldName" : "threat.enrichments.indicator.marking.tlp.version",
+  "fieldName" : "threat.enrichments.indicator.marking.tlp",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Traffic Light Protocol sharing markings.</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">WHITE</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">CLEAR</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">GREEN</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER+STRICT</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">RED</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">CLEAR</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.marking.tlp_version",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Traffic Light Protocol version.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
@@ -7393,6 +8073,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The date and time when intelligence source last modified information for this indicator.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-11-05T17:25:47.000Z</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The display name indicator in an UI friendly format</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">5.2.75.227</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">2a02:cf40:add:4002:91f2:a9b2:e09a:6fc6</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">https://example.com/some/path</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">example.com</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">373d34874d7bc89fd4cefa6272ee80bf</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">b0e914d1bbe19433cc9df64ea1ca07fe77f7b150b511b786e46e007941a62bd7</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">email@example.com</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">HKLM\\SOFTWARE\\Microsoft\\Active</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">13335</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">00:00:5e:00:53:af</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">8008</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">5.2.75.227</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.port",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7534,10 +8219,20 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Traffic Light Protocol sharing markings.</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">WHITE</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">CLEAR</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">GREEN</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">AMBER+STRICT</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">RED</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">CLEAR</code></p>"
 }, {
+  "fieldName" : "threat.indicator.marking.tlp_version",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Traffic Light Protocol version.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
+}, {
   "fieldName" : "threat.indicator.modified_at",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The date and time when intelligence source last modified information for this indicator.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-11-05T17:25:47.000Z</code></p>"
+}, {
+  "fieldName" : "threat.indicator.name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The display name indicator in an UI friendly format</p> <p>Expected values for this field:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> <code class=\"literal\">5.2.75.227</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">2a02:cf40:add:4002:91f2:a9b2:e09a:6fc6</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">https://example.com/some/path</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">example.com</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">373d34874d7bc89fd4cefa6272ee80bf</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">b0e914d1bbe19433cc9df64ea1ca07fe77f7b150b511b786e46e007941a62bd7</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">email@example.com</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">HKLM\\SOFTWARE\\Microsoft\\Active</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">13335</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">00:00:5e:00:53:af</code> </li> \n  <li class=\"listitem\"> <code class=\"literal\">8008</code> </li> \n </ul> \n</div> <p>type: keyword</p> <p>example: <code class=\"literal\">5.2.75.227</code></p>"
 }, {
   "fieldName" : "threat.indicator.port",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7643,11 +8338,6 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The reference url of subtechnique used by this threat. You can use a MITRE ATT&amp;CK® subtechnique, for example. (ex. <a href=\"https://attack.mitre.org/techniques/T1059/001/\" class=\"ulink\" target=\"_blank\">https://attack.mitre.org/techniques/T1059/001/</a>)</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">https://attack.mitre.org/techniques/T1059/001/</code></p>"
-}, {
-  "fieldName" : "threat.threat.indicator.marking.tlp.version",
-  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Traffic Light Protocol version.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">2.0</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.as.number",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7839,6 +8529,31 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of exported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
 }, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.go_import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in an ELF file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.go_imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.go_stripped",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "threat.enrichments.indicator.file.elf.header.abi_version",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -7879,10 +8594,25 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Version of the ELF header.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in an ELF file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is an ELF implementation of the Windows PE imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
   "fieldName" : "threat.enrichments.indicator.file.elf.imports",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.elf.sections",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7923,6 +8653,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>ELF Section List type.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.elf.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.elf.sections.virtual_address",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -7994,6 +8729,86 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>TLSH hash.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.go_import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a Mach-O file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.go_imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.go_stripped",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for symhash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.sections",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the Mach-O file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">macho.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.sections.entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.sections.name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.sections.physical_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.sections.virtual_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.macho.symhash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a Mach-O implementation of the Windows PE imphash</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d3ccf195b62a9279c3c19af1080497ec</code></p>"
+}, {
   "fieldName" : "threat.enrichments.indicator.file.pe.architecture",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -8014,10 +8829,55 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
 }, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.go_import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a PE file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.go_imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.go_stripped",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "threat.enrichments.indicator.file.pe.imphash",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.pe.original_file_name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -8033,6 +8893,36 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.sections",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the PE file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">pe.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.sections.entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.sections.name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.sections.physical_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.pe.sections.virtual_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.x509.alternative_names",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -8624,6 +9514,31 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of exported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
 }, {
+  "fieldName" : "threat.indicator.file.elf.go_import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in an ELF file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.go_imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.go_stripped",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "threat.indicator.file.elf.header.abi_version",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -8664,10 +9579,25 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Version of the ELF header.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "threat.indicator.file.elf.import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in an ELF file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is an ELF implementation of the Windows PE imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
   "fieldName" : "threat.indicator.file.elf.imports",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.indicator.file.elf.sections",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -8708,6 +9638,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>ELF Section List type.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.indicator.file.elf.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.indicator.file.elf.sections.virtual_address",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -8779,6 +9714,86 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>TLSH hash.</p> <p>type: keyword</p>"
 }, {
+  "fieldName" : "threat.indicator.file.macho.go_import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a Mach-O file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.go_imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.go_stripped",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for symhash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.sections",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the Mach-O file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">macho.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.sections.entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.sections.name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.sections.physical_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.sections.virtual_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mach-O Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.macho.symhash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a Mach-O file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a Mach-O implementation of the Windows PE imphash</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d3ccf195b62a9279c3c19af1080497ec</code></p>"
+}, {
   "fieldName" : "threat.indicator.file.pe.architecture",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -8799,10 +9814,55 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal version of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">6.3.9600.17415</code></p>"
 }, {
+  "fieldName" : "threat.indicator.file.pe.go_import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the Go language imports in a PE file excluding standard library imports. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>The algorithm used to calculate the Go symbol hash and a reference implementation are available [here](<a href=\"https://github.com/elastic/toutoumomoma\" class=\"ulink\" target=\"_blank\">https://github.com/elastic/toutoumomoma</a>).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">10bddcb4cee42080f76c88d9ff964491</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.go_imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported Go language element names and types.</p> <p>type: flattened</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.go_imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.go_imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of Go imports.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.go_stripped",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Set to true if the file is a Go executable that has had its symbols stripped or obfuscated and false if an unobfuscated Go executable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "threat.indicator.file.pe.imphash",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>A hash of the imports in a PE file. An imphash — or import hash — can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>Learn more at <a href=\"https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html\" class=\"ulink\" target=\"_blank\">https://www.fireeye.com/blog/threat-research/2014/01/tracking-malware-import-hashing.html</a>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">0c6803c4e922103c4dca5963aad36ddf</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.import_hash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A hash of the imports in a PE file. An import hash can be used to fingerprint binaries even after recompilation or other code-level transformations have occurred, which would change more traditional hash values.</p> <p>This is a synonym for imphash.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">d41d8cd98f00b204e9800998ecf8427e</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.imports",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>List of imported element names and types.</p> <p>type: flattened</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.imports_names_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.imports_names_var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the list of imported element names and types.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.indicator.file.pe.original_file_name",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -8818,6 +9878,36 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Internal product name of the file, provided at compile-time.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Microsoft® Windows® Operating System</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.sections",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array containing an object for each section of the PE file.</p> <p>The keys that should be present in these objects are defined by sub-fields underneath <code class=\"literal\">pe.sections.*</code>.</p> <p>type: nested</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.sections.entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.sections.name",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List name.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.sections.physical_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List physical size.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.sections.var_entropy",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Variance for Shannon entropy calculation from the section.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "threat.indicator.file.pe.sections.virtual_size",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>PE Section List virtual size. This is always the same as <code class=\"literal\">physical_size</code>.</p> <p>type: long</p>"
 }, {
   "fieldName" : "threat.indicator.file.x509.alternative_names",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
