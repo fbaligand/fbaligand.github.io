@@ -972,7 +972,7 @@
   "fieldName" : "device.id",
   "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The unique identifier of a device. The identifier must not change across application sessions but stay fixex for an instance of a (mobile) device.</p> <p>On iOS, this value must be equal to the vendor identifier (<a href=\"https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor\" class=\"ulink\" target=\"_blank\">https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor</a>). On Android, this value must be equal to the Firebase Installation ID or a globally unique UUID which is persisted across sessions in your application.</p> <p>For GDPR and data protection law reasons this identifier should not carry information that would allow to identify a user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00000000-54b3-e7c7-0000-000046bffd97</code></p>"
+  "fieldDescription" : "<p>The unique identifier of a device. The identifier must not change across application sessions but stay fixed for an instance of a (mobile) device.</p> <p>On iOS, this value must be equal to the vendor identifier (<a href=\"https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor\" class=\"ulink\" target=\"_blank\">https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor</a>). On Android, this value must be equal to the Firebase Installation ID or a globally unique UUID which is persisted across sessions in your application.</p> <p>For GDPR and data protection law reasons this identifier should not carry information that would allow to identify a user.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">00000000-54b3-e7c7-0000-000046bffd97</code></p>"
 }, {
   "fieldName" : "device.manufacturer",
   "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
@@ -1647,7 +1647,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1657,7 +1657,7 @@
   "fieldName" : "event.created",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>event.created contains the date/time when the event was first read by an agent, or by your pipeline.</p> <p>This field is distinct from @timestamp in that @timestamp typically contain the time extracted from the original event.</p> <p>In most situations, these two timestamps will be slightly different. The difference can be used to calculate the delay between your source generating an event, and the time when your agent first processed it. This can be used to monitor your agent’s or pipeline’s ability to keep up with your event source.</p> <p>In case the two timestamps are identical, @timestamp should be used.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.857Z</code></p>"
+  "fieldDescription" : "<p><code class=\"literal\">event.created</code> contains the date/time when the event was first read by an agent, or by your pipeline.</p> <p>This field is distinct from <code class=\"literal\">@timestamp</code> in that <code class=\"literal\">@timestamp</code> typically contain the time extracted from the original event.</p> <p>In most situations, these two timestamps will be slightly different. The difference can be used to calculate the delay between your source generating an event, and the time when your agent first processed it. This can be used to monitor your agent’s or pipeline’s ability to keep up with your event source.</p> <p>In case the two timestamps are identical, <code class=\"literal\">@timestamp</code> should be used.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.857Z</code></p>"
 }, {
   "fieldName" : "event.dataset",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1667,12 +1667,12 @@
   "fieldName" : "event.duration",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>Duration of the event in nanoseconds.</p> <p>If event.start and event.end are known this value should be the difference between the end and start time.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>Duration of the event in nanoseconds.</p> <p>If <code class=\"literal\">event.start</code> and <code class=\"literal\">event.end</code> are known this value should be the difference between the end and start time.</p> <p>type: long</p>"
 }, {
   "fieldName" : "event.end",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>event.end contains the date when the event ended or when the activity was last observed.</p> <p>type: date</p>"
+  "fieldDescription" : "<p><code class=\"literal\">event.end</code> contains the date when the event ended or when the activity was last observed.</p> <p>type: date</p>"
 }, {
   "fieldName" : "event.hash",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1692,7 +1692,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1707,7 +1707,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1747,7 +1747,7 @@
   "fieldName" : "event.start",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>event.start contains the date when the event started or when the activity was first observed.</p> <p>type: date</p>"
+  "fieldDescription" : "<p><code class=\"literal\">event.start</code> contains the date when the event started or when the activity was first observed.</p> <p>type: date</p>"
 }, {
   "fieldName" : "event.timezone",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1757,7 +1757,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.7/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -3384,6 +3384,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Organization affected by the event (for multi-tenant orchestrator setups).</p> <p>type: keyword</p> <p>example: <code class=\"literal\">elastic</code></p>"
 }, {
+  "fieldName" : "orchestrator.resource.annotation",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The list of annotations added to the resource.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">['key1:value1', 'key2:value2', 'key3:value3']</code></p>"
+}, {
   "fieldName" : "orchestrator.resource.id",
   "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
   "fieldLevel" : "extended",
@@ -3393,6 +3398,11 @@
   "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>IP address assigned to the resource associated with the event being observed. In the case of a Kubernetes Pod, this array would contain only one element: the IP of the Pod (as opposed to the Node on which the Pod is running).</p> <p>type: ip</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "orchestrator.resource.label",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The list of labels added to the resource.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">['key1:value1', 'key2:value2', 'key3:value3']</code></p>"
 }, {
   "fieldName" : "orchestrator.resource.name",
   "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
