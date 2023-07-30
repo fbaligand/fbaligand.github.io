@@ -1647,7 +1647,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.9/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1692,7 +1692,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.9/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1707,7 +1707,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.9/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1757,7 +1757,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.8/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.9/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1783,11 +1783,6 @@
   "fieldSet" : "<abbr title='Fields describing functions as a service.'>FaaS</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The name of a serverless function.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">my-function</code></p>"
-}, {
-  "fieldName" : "faas.trigger",
-  "fieldSet" : "<abbr title='Fields describing functions as a service.'>FaaS</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Details about the function trigger.</p> <p>type: nested</p>"
 }, {
   "fieldName" : "faas.trigger.request_id",
   "fieldSet" : "<abbr title='Fields describing functions as a service.'>FaaS</abbr>",
@@ -3814,6 +3809,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -4419,6 +4419,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.entry_leader.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.entry_leader.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -4589,6 +4594,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.entry_leader.parent.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.entry_leader.parent.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -4758,6 +4768,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "process.entry_leader.parent.session_leader.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5254,6 +5269,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.group_leader.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.group_leader.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -5539,6 +5559,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.parent.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.parent.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -5708,6 +5733,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "process.parent.group_leader.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
 }, {
   "fieldName" : "process.parent.group_leader.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5993,6 +6023,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "process.previous.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
 }, {
   "fieldName" : "process.previous.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6564,6 +6599,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.session_leader.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.session_leader.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -6734,6 +6774,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
 }, {
+  "fieldName" : "process.session_leader.parent.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
   "fieldName" : "process.session_leader.parent.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -6903,6 +6948,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "process.session_leader.parent.session_leader.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.working_directory",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
