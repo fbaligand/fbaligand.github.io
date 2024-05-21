@@ -1,4 +1,6 @@
-$(document).ready(function () {
+function initDataTable() {
+    var PAGE_HEAD_HEIGHT = 195;
+
     $("#ecs-fields").DataTable({
         "ajax": {
             "url": "./ecs-fields.json?v=8.13",
@@ -6,12 +8,15 @@ $(document).ready(function () {
         },
         "paging": true,
         "pageLength": 500,
+        "lengthMenu": [10, 25, 50, 100, 500],
         "responsive": true,
-        "fixedHeader": true,
+        "scrollY": $(document).height() - PAGE_HEAD_HEIGHT,
         "language": {
-            "info": "Showing _END_ fields",
-            "infoEmpty": "No fields found",
-            "infoFiltered": "(filtered from _MAX_ total fields)"
+            "info": "Showing _START_ to _END_ fields (from _MAX_ total fields)",
+            "infoEmpty": "No matching fields found",
+            "zeroRecords": "No matching fields found",
+            "infoFiltered": "",
+            "lengthMenu": "Show _MENU_ fields"
         },
         "order": [[1, "asc"]],
         "columns": [
@@ -21,4 +26,6 @@ $(document).ready(function () {
             { "data": "fieldDescription", "title": "Field Description", "orderable": false, "searchable": false }
         ]
     });
-});
+}
+
+$(initDataTable);
