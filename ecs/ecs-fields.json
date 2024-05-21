@@ -1652,7 +1652,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.12/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.13/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1697,7 +1697,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.12/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.13/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1712,7 +1712,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.12/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.13/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1762,7 +1762,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.12/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.13/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -11203,86 +11203,6 @@
   "fieldSet" : "<abbr title='Fields to describe observed VLAN information.'>VLAN</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Optional VLAN name as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
-}, {
-  "fieldName" : "volume.bus_type",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Bus type of the device, such as <code class=\"literal\">Nvme</code>, <code class=\"literal\">Usb</code>, or <code class=\"literal\">FileBackedVirtual</code>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">FileBackedVirtual</code></p>"
-}, {
-  "fieldName" : "volume.default_access",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Describes the default access(es) of the volume.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.device_name",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Full path of the volume device.</p> <p>Only populate this field for POSIX system volumes.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.device_type",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Volume device type.</p> <p>The most frequently seen volume device types are <code class=\"literal\">Disk File System</code> and <code class=\"literal\">CD-ROM File System</code>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CD-ROM File System</code></p>"
-}, {
-  "fieldName" : "volume.dos_name",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The MS-DOS name of a device.</p> <p>DOS device name is in the format of driver letters, such as <code class=\"literal\">C:</code>. The field is relevant to Windows systems only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">E:</code></p>"
-}, {
-  "fieldName" : "volume.file_system_type",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Volume device file system type.</p> <p>The most common volume file system types are <code class=\"literal\">NTFS</code> and <code class=\"literal\">UDF</code>.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.mount_name",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Mount name of the volume device.</p> <p>Only populate this field for POSIX system volumes.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.nt_name",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The NT device name.</p> <p>NT device name uses a format of <code class=\"literal\">\\Device\\HarddiskVolume2</code>. The field is relevant to Windows systems only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">\\Device\\Cdrom1</code></p>"
-}, {
-  "fieldName" : "volume.product_id",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>ProductID of the device.</p> <p>The vendor provides the ProductID for the volume, if any.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.product_name",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Product name of the volume.</p> <p>The volume device vendor provides this value.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Virtual DVD-ROM</code></p>"
-}, {
-  "fieldName" : "volume.removable",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Indicates if the volume is removable.</p> <p>type: boolean</p>"
-}, {
-  "fieldName" : "volume.serial_number",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Serial number identifier for the volume device.</p> <p>The serial number is provided by the vendor of the device, if any.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.size",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Size of the volume device in bytes.</p> <p>type: long</p>"
-}, {
-  "fieldName" : "volume.vendor_id",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>VendorID of the volume device.</p> <p>The volume device vendor provides this value.</p> <p>type: keyword</p>"
-}, {
-  "fieldName" : "volume.vendor_name",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Vendor name of the volume device.</p> <p>The value is provided by the vendor of the device.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Msft</code></p>"
-}, {
-  "fieldName" : "volume.writable",
-  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
-  "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Indicates if the volume is writable.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "vulnerability.category",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
