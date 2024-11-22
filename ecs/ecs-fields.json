@@ -544,6 +544,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
 }, {
+  "fieldName" : "code_signature.flags",
+  "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The flags used to sign the process.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">570522385</code></p>"
+}, {
   "fieldName" : "code_signature.signing_id",
   "fieldSet" : "<abbr title='These fields contain information about binary code signatures.'>Code Signature</abbr>",
   "fieldLevel" : "extended",
@@ -994,6 +999,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The human readable marketing name of the device model.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Samsung Galaxy S6</code></p>"
 }, {
+  "fieldName" : "device.serial_number",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The unique serial number serves as a distinct identifier for each device, aiding in inventory management and device authentication.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">DJGAQS4CW5</code></p>"
+}, {
   "fieldName" : "dll.name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "core",
@@ -1013,6 +1023,11 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "dll.code_signature.flags",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The flags used to sign the process.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">570522385</code></p>"
 }, {
   "fieldName" : "dll.code_signature.signing_id",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -1048,6 +1063,11 @@
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Boolean to capture if the digital signature is verified against the binary content.</p> <p>Leave unpopulated if a certificate was unchecked.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "dll.hash.cdhash",
+  "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
 }, {
   "fieldName" : "dll.hash.md5",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -1579,6 +1599,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The name of the application that was used to draft and send the original email message.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Spambot v2.5</code></p>"
 }, {
+  "fieldName" : "email.attachments.file.hash.cdhash",
+  "fieldSet" : "<abbr title='Describes an email transaction.'>Email</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
+}, {
   "fieldName" : "email.attachments.file.hash.md5",
   "fieldSet" : "<abbr title='Describes an email transaction.'>Email</abbr>",
   "fieldLevel" : "extended",
@@ -1652,7 +1677,7 @@
   "fieldName" : "event.category",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.14/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the second level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.category</code> represents the \"big buckets\" of ECS categories. For example, filtering on <code class=\"literal\">event.category:process</code> yields all events relating to process activity. This field is closely related to <code class=\"literal\">event.type</code>, which is used as a subcategory.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple categories.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>api, authentication, configuration, database, driver, email, file, host, iam, intrusion_detection, library, malware, network, package, process, registry, session, threat, vulnerability, web</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.16/ecs-allowed-values-event-category.html\" title=\"ECS Categorization Field: event.category\">allowed values for event.category</a></p>"
 }, {
   "fieldName" : "event.code",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1697,7 +1722,7 @@
   "fieldName" : "event.kind",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.14/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the highest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.kind</code> gives high-level information about what type of information the event contains, without being specific to the contents of the event. For example, values of this field distinguish alert events from metric events.</p> <p>The value of this field can be used to inform how these kinds of events should be handled. They may warrant different retention, different access control, it may also help understand whether the data is coming in at a regular interval or not.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>alert, asset, enrichment, event, metric, state, pipeline_error, signal</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.16/ecs-allowed-values-event-kind.html\" title=\"ECS Categorization Field: event.kind\">allowed values for event.kind</a></p>"
 }, {
   "fieldName" : "event.module",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1712,7 +1737,7 @@
   "fieldName" : "event.outcome",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.14/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the lowest level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.outcome</code> simply denotes whether the event represents a success or a failure from the perspective of the entity that produced the event.</p> <p>Note that when a single transaction is described in multiple events, each event may populate different values of <code class=\"literal\">event.outcome</code>, according to their perspective.</p> <p>Also note that in the case of a compound event (a single event that contains multiple logical events), this field should be populated with the value that best captures the overall success or failure from the perspective of the event producer.</p> <p>Further note that not all events will have an associated outcome. For example, this field is generally not populated for metric events, events with <code class=\"literal\">event.type:info</code>, or any events for which an outcome does not make logical sense.</p> <p>type: keyword</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>failure, success, unknown</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.16/ecs-allowed-values-event-outcome.html\" title=\"ECS Categorization Field: event.outcome\">allowed values for event.outcome</a></p>"
 }, {
   "fieldName" : "event.provider",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1762,7 +1787,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.14/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
+  "fieldDescription" : "<p>This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.</p> <p><code class=\"literal\">event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code class=\"literal\">event.category</code> field values, enables filtering events down to a level appropriate for single visualization.</p> <p>This field is an array. This will allow proper categorization of some events that fall in multiple event types.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p><span class=\"strong strong\"><strong>Important</strong></span>: The field value must be one of the following:</p> <p>access, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user</p> <p>To learn more about when to use which value, visit the page <a target=\"_blank\" href=\"https://www.elastic.co/guide/en/ecs/8.16/ecs-allowed-values-event-type.html\" title=\"ECS Categorization Field: event.type\">allowed values for event.type</a></p>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -1923,6 +1948,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "file.code_signature.flags",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The flags used to sign the process.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">570522385</code></p>"
 }, {
   "fieldName" : "file.code_signature.signing_id",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2148,6 +2178,11 @@
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>telfhash symbol hash for ELF file.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "file.hash.cdhash",
+  "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
 }, {
   "fieldName" : "file.hash.md5",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2452,7 +2487,7 @@
   "fieldName" : "file.x509.serial_number",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "file.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields describing files.'>File</abbr>",
@@ -2568,6 +2603,11 @@
   "fieldSet" : "<abbr title='User’s group relevant to the event.'>Group</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Name of the group.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "hash.cdhash",
+  "fieldSet" : "<abbr title='Hashes, usually file hashes.'>Hash</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
 }, {
   "fieldName" : "hash.md5",
   "fieldSet" : "<abbr title='Hashes, usually file hashes.'>Hash</abbr>",
@@ -3682,7 +3722,7 @@
   "fieldName" : "process.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3702,47 +3742,47 @@
   "fieldName" : "process.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -3812,12 +3852,12 @@
   "fieldName" : "process.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4043,6 +4083,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "process.code_signature.flags",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The flags used to sign the process.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">570522385</code></p>"
 }, {
   "fieldName" : "process.code_signature.signing_id",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4302,7 +4347,7 @@
   "fieldName" : "process.entry_leader.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.entry_leader.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4322,47 +4367,47 @@
   "fieldName" : "process.entry_leader.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.entry_leader.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.entry_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.entry_leader.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.entry_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.entry_leader.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4432,12 +4477,12 @@
   "fieldName" : "process.entry_leader.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.entry_leader.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.entry_leader.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4487,7 +4532,7 @@
   "fieldName" : "process.entry_leader.parent.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4507,47 +4552,47 @@
   "fieldName" : "process.entry_leader.parent.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4617,12 +4662,12 @@
   "fieldName" : "process.entry_leader.parent.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4672,7 +4717,7 @@
   "fieldName" : "process.entry_leader.parent.session_leader.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4692,47 +4737,47 @@
   "fieldName" : "process.entry_leader.parent.session_leader.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -4802,12 +4847,12 @@
   "fieldName" : "process.entry_leader.parent.session_leader.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.entry_leader.parent.session_leader.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5182,7 +5227,7 @@
   "fieldName" : "process.group_leader.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.group_leader.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5202,47 +5247,47 @@
   "fieldName" : "process.group_leader.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.group_leader.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.group_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.group_leader.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.group_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.group_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.group_leader.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5312,12 +5357,12 @@
   "fieldName" : "process.group_leader.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.group_leader.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.group_leader.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5333,6 +5378,11 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> process.working_directory.text (type: match_only_text) </li> \n </ul> \n</div> <p>example: <code class=\"literal\">/home/alice</code></p>"
+}, {
+  "fieldName" : "process.hash.cdhash",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
 }, {
   "fieldName" : "process.hash.md5",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5482,7 +5532,7 @@
   "fieldName" : "process.parent.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.parent.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5502,47 +5552,47 @@
   "fieldName" : "process.parent.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.parent.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.parent.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.parent.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.parent.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.parent.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5612,12 +5662,12 @@
   "fieldName" : "process.parent.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.parent.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.parent.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5667,7 +5717,7 @@
   "fieldName" : "process.parent.group_leader.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.parent.group_leader.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5687,47 +5737,47 @@
   "fieldName" : "process.parent.group_leader.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.parent.group_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.parent.group_leader.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5797,12 +5847,12 @@
   "fieldName" : "process.parent.group_leader.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.parent.group_leader.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.parent.group_leader.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5967,7 +6017,7 @@
   "fieldName" : "process.previous.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.previous.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5987,47 +6037,47 @@
   "fieldName" : "process.previous.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.previous.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.previous.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.previous.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.previous.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.previous.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.previous.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6097,12 +6147,12 @@
   "fieldName" : "process.previous.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.previous.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.previous.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6318,6 +6368,191 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Array of user roles at the time of the event.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"kibana_admin\", \"reporting_user\"]</code></p>"
+}, {
+  "fieldName" : "process.responsible.args",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of process arguments, starting with the absolute path to the executable.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"/usr/bin/ssh\", \"-l\", \"user\", \"10.0.0.16\"]</code></p>"
+}, {
+  "fieldName" : "process.responsible.args_count",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Length of the process.args array.</p> <p>This field can be useful for querying or performing bucket analysis on how many arguments were provided to start a process. More arguments may be an indication of suspicious activity.</p> <p>type: long</p> <p>example: <code class=\"literal\">4</code></p>"
+}, {
+  "fieldName" : "process.responsible.command_line",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Full command line that started the process, including the absolute path to the executable, and all arguments.</p> <p>Some arguments may be filtered to protect sensitive information.</p> <p>type: wildcard</p> <p>Multi-fields:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> process.command_line.text (type: match_only_text) </li> \n </ul> \n</div> <p>example: <code class=\"literal\">/usr/bin/ssh -l user 10.0.0.16</code></p>"
+}, {
+  "fieldName" : "process.responsible.end",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The time the process ended.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.853Z</code></p>"
+}, {
+  "fieldName" : "process.responsible.entity_id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Unique identifier for the process.</p> <p>The implementation of this is specified by the data source, but some examples of what could be used here are a process-generated UUID, Sysmon Process GUIDs, or a hash of some uniquely identifying components of a process.</p> <p>Constructing a globally unique identifier is a common practice to mitigate PID reuse as well as to identify a specific process over time, across multiple monitored hosts.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">c2c455d9f99375d</code></p>"
+}, {
+  "fieldName" : "process.responsible.entry_meta.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The entry type for the entry session leader. Values include: init(e.g systemd), sshd, ssm, kubelet, teleport, terminal, console</p> <p>Note: This field is only set on process.session_leader.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.responsible.env_vars",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+}, {
+  "fieldName" : "process.responsible.executable",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Absolute path to the process executable.</p> <p>type: keyword</p> <p>Multi-fields:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> process.executable.text (type: match_only_text) </li> \n </ul> \n</div> <p>example: <code class=\"literal\">/usr/bin/ssh</code></p>"
+}, {
+  "fieldName" : "process.responsible.exit_code",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The exit code of the process, if this is a termination event.</p> <p>The field should be absent if there is no exit code for the event (e.g. process start).</p> <p>type: long</p> <p>example: <code class=\"literal\">137</code></p>"
+}, {
+  "fieldName" : "process.responsible.interactive",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Whether the process is connected to an interactive shell.</p> <p>Process interactivity is inferred from the processes file descriptors. If the character device for the controlling tty is the same as stdin and stderr for the process, the process is considered interactive.</p> <p>Note: A non-interactive process can belong to an interactive session and is simply one that does not have open file descriptors reading the controlling TTY on FD 0 (stdin) or writing to the controlling TTY on FD 2 (stderr). A backgrounded process is still considered interactive if stdin and stderr are connected to the controlling TTY.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">True</code></p>"
+}, {
+  "fieldName" : "process.responsible.io",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+}, {
+  "fieldName" : "process.responsible.io.bytes_skipped",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+}, {
+  "fieldName" : "process.responsible.io.bytes_skipped.length",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.responsible.io.bytes_skipped.offset",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.responsible.io.max_bytes_per_process_exceeded",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "process.responsible.io.text",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+}, {
+  "fieldName" : "process.responsible.io.total_bytes_captured",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.responsible.io.total_bytes_skipped",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.responsible.io.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "process.responsible.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Process name.</p> <p>Sometimes called program name or similar.</p> <p>type: keyword</p> <p>Multi-fields:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> process.name.text (type: match_only_text) </li> \n </ul> \n</div> <p>example: <code class=\"literal\">ssh</code></p>"
+}, {
+  "fieldName" : "process.responsible.pgid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Deprecated for removal in next major version release. This field is superseded by <code class=\"literal\">process.group_leader.pid</code>.</p> <p>Identifier of the group of processes the process belongs to.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "process.responsible.pid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Process id.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
+  "fieldName" : "process.responsible.same_as_process",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>This boolean is used to identify if a leader process is the same as the top level process.</p> <p>For example, if <code class=\"literal\">process.group_leader.same_as_process = true</code>, it means the process event in question is the leader of its process group. Details under <code class=\"literal\">process.*</code> like <code class=\"literal\">pid</code> would be the same under <code class=\"literal\">process.group_leader.*</code> The same applies for both <code class=\"literal\">process.session_leader</code> and <code class=\"literal\">process.entry_leader</code>.</p> <p>This field exists to the benefit of EQL and other rule engines since it’s not possible to compare equality between two fields in a single document. e.g <code class=\"literal\">process.entity_id</code> = <code class=\"literal\">process.group_leader.entity_id</code> (top level process is the process group leader) OR <code class=\"literal\">process.entity_id</code> = <code class=\"literal\">process.entry_leader.entity_id</code> (top level process is the entry session leader)</p> <p>Instead these rules could be written like: <code class=\"literal\">process.group_leader.same_as_process: true</code> OR <code class=\"literal\">process.entry_leader.same_as_process: true</code></p> <p>Note: This field is only set on <code class=\"literal\">process.entry_leader</code>, <code class=\"literal\">process.session_leader</code> and <code class=\"literal\">process.group_leader</code>.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">True</code></p>"
+}, {
+  "fieldName" : "process.responsible.start",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The time the process started.</p> <p>type: date</p> <p>example: <code class=\"literal\">2016-05-23T08:05:34.853Z</code></p>"
+}, {
+  "fieldName" : "process.responsible.thread.capabilities.effective",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>This is the set of capabilities used by the kernel to perform permission checks for the thread.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"CAP_BPF\", \"CAP_SYS_ADMIN\"]</code></p>"
+}, {
+  "fieldName" : "process.responsible.thread.capabilities.permitted",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>This is a limiting superset for the effective capabilities that the thread may assume.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"CAP_BPF\", \"CAP_SYS_ADMIN\"]</code></p>"
+}, {
+  "fieldName" : "process.responsible.thread.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Thread ID.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
+  "fieldName" : "process.responsible.thread.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Thread name.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">thread-0</code></p>"
+}, {
+  "fieldName" : "process.responsible.title",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Process title.</p> <p>The proctitle, some times the same as process name. Can also be different: for example a browser setting its title to the web page currently opened.</p> <p>type: keyword</p> <p>Multi-fields:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> process.title.text (type: match_only_text) </li> \n </ul> \n</div>"
+}, {
+  "fieldName" : "process.responsible.tty",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Information about the controlling TTY device. If set, the process belongs to an interactive session.</p> <p>type: object</p>"
+}, {
+  "fieldName" : "process.responsible.tty.char_device.major",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The major number identifies the driver associated with the device. The character device’s major and minor numbers can be algorithmically combined to produce the more familiar terminal identifiers such as \"ttyS0\" and \"pts/0\". For more details, please refer to the Linux kernel documentation.</p> <p>type: long</p> <p>example: <code class=\"literal\">4</code></p>"
+}, {
+  "fieldName" : "process.responsible.tty.char_device.minor",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The minor number is used only by the driver specified by the major number; other parts of the kernel don’t use it, and merely pass it along to the driver. It is common for a driver to control several devices; the minor number provides a way for the driver to differentiate among them.</p> <p>type: long</p> <p>example: <code class=\"literal\">1</code></p>"
+}, {
+  "fieldName" : "process.responsible.tty.columns",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+}, {
+  "fieldName" : "process.responsible.tty.rows",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+}, {
+  "fieldName" : "process.responsible.uptime",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Seconds the process has been up.</p> <p>type: long</p> <p>example: <code class=\"literal\">1325</code></p>"
+}, {
+  "fieldName" : "process.responsible.vpid",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<p>Virtual process id.</p> <p>The process id within a pid namespace. This is not necessarily unique across all processes on the host but it is unique within the process namespace that the process exists within.</p> <p>type: long</p> <p>example: <code class=\"literal\">4242</code></p>"
+}, {
+  "fieldName" : "process.responsible.working_directory",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The working directory of the process.</p> <p>type: keyword</p> <p>Multi-fields:</p> \n<div class=\"ulist itemizedlist\"> \n <ul class=\"itemizedlist\"> \n  <li class=\"listitem\"> process.working_directory.text (type: match_only_text) </li> \n </ul> \n</div> <p>example: <code class=\"literal\">/home/alice</code></p>"
 }, {
   "fieldName" : "process.saved_group.domain",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6552,7 +6787,7 @@
   "fieldName" : "process.session_leader.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.session_leader.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6572,47 +6807,47 @@
   "fieldName" : "process.session_leader.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.session_leader.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.session_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.session_leader.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.session_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.session_leader.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6682,12 +6917,12 @@
   "fieldName" : "process.session_leader.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.session_leader.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.session_leader.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6737,7 +6972,7 @@
   "fieldName" : "process.session_leader.parent.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6757,47 +6992,47 @@
   "fieldName" : "process.session_leader.parent.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.session_leader.parent.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6867,12 +7102,12 @@
   "fieldName" : "process.session_leader.parent.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6922,7 +7157,7 @@
   "fieldName" : "process.session_leader.parent.session_leader.env_vars",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
+  "fieldDescription" : "<p>Array of environment variable bindings. Captured from a snapshot of the environment at the time of execution.</p> <p>May be filtered to protect sensitive information.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[\"PATH=/usr/local/bin:/usr/bin\", \"USER=ubuntu\"]</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.executable",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6942,47 +7177,47 @@
   "fieldName" : "process.session_leader.parent.session_leader.io",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
+  "fieldDescription" : "<p>A chunk of input or output (IO) from a single process.</p> <p>This field only appears on the top level process object, which is the process that wrote the output or read the input.</p> <p>type: object</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
+  "fieldDescription" : "<p>An array of byte offsets and lengths denoting where IO data has been skipped.</p> <p>type: object</p> <p>Note: this field should contain an array of values.</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.bytes_skipped.length",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The length of bytes skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The length of bytes skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.bytes_skipped.offset",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The byte offset into this event’s io.text (or io.bytes in the future) where length bytes were skipped.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.max_bytes_per_process_exceeded",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
+  "fieldDescription" : "<p>If true, the process producing the output has exceeded the max_kilobytes_per_process configuration setting.</p> <p>type: boolean</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.text",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
+  "fieldDescription" : "<p>A chunk of output or input sanitized to UTF-8.</p> <p>Best efforts are made to ensure complete lines are captured in these events. Assumptions should NOT be made that multiple lines will appear in the same event. TTY output may contain terminal control codes such as for cursor movement, so some string queries may not match due to terminal codes inserted between characters of a word.</p> <p>type: wildcard</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.total_bytes_captured",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes captured in this event.</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes captured in this event.</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.total_bytes_skipped",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
+  "fieldDescription" : "<p>The total number of bytes that were not captured due to implementation restrictions such as buffer size limits. Implementors should strive to ensure this value is always zero</p> <p>type: long</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.io.type",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
+  "fieldDescription" : "<p>The type of object on which the IO action (read or write) was taken.</p> <p>Currently only <em>tty</em> is supported. Other types may be added in the future for <em>file</em> and <em>socket</em> support.</p> <p>type: keyword</p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.name",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -7052,12 +7287,12 @@
   "fieldName" : "process.session_leader.parent.session_leader.tty.columns",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
+  "fieldDescription" : "<p>The number of character columns per line. e.g terminal width</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">80</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.tty.rows",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
+  "fieldDescription" : "<p>The number of character rows in the terminal. e.g terminal height</p> <p>Terminal sizes can change, so this value reflects the maximum value for a given IO event. i.e. where event.action = <em>text_output</em></p> <p>type: long</p> <p>example: <code class=\"literal\">24</code></p>"
 }, {
   "fieldName" : "process.session_leader.parent.session_leader.uptime",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -8379,6 +8614,11 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>The date and time when intelligence source first reported sighting this indicator.</p> <p>type: date</p> <p>example: <code class=\"literal\">2020-11-05T17:25:47.000Z</code></p>"
 }, {
+  "fieldName" : "threat.indicator.id",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The ID of the indicator used by this threat to conduct behavior commonly modeled using MITRE ATT&amp;CK®. This field can have multiple values to allow for the identification of the same indicator across systems that use different ID formats.</p> <p>While not required, a common approach is to use a STIX 2.x indicator ID.</p> <p>type: keyword</p> <p>Note: this field should contain an array of values.</p> <p>example: <code class=\"literal\">[indicator--d7008e06-ab86-415a-9803-3c81ce2d3c37]</code></p>"
+}, {
   "fieldName" : "threat.indicator.ip",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -8644,6 +8884,11 @@
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
 }, {
+  "fieldName" : "threat.enrichments.indicator.file.code_signature.flags",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The flags used to sign the process.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">570522385</code></p>"
+}, {
   "fieldName" : "threat.enrichments.indicator.file.code_signature.signing_id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
@@ -8868,6 +9113,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>telfhash symbol hash for ELF file.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.enrichments.indicator.file.hash.cdhash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.hash.md5",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -9172,7 +9422,7 @@
   "fieldName" : "threat.enrichments.indicator.file.x509.serial_number",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.file.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -9452,7 +9702,7 @@
   "fieldName" : "threat.enrichments.indicator.x509.serial_number",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "threat.enrichments.indicator.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -9628,6 +9878,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<p>Boolean to capture if a signature is present.</p> <p>type: boolean</p> <p>example: <code class=\"literal\">true</code></p>"
+}, {
+  "fieldName" : "threat.indicator.file.code_signature.flags",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>The flags used to sign the process.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">570522385</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.code_signature.signing_id",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -9853,6 +10108,11 @@
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>telfhash symbol hash for ELF file.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "threat.indicator.file.hash.cdhash",
+  "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p><span class=\"Admonishment Admonishment--beta\"> [<span class=\"Admonishment-title u-mono\">beta</span>] <span class=\"Admonishment-detail\"> This field is beta and subject to change. </span> </span></p> <p>Code directory hash, utilized to uniquely identify and authenticate the integrity of the executable code.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">3783b4052fd474dbe30676b45c329e7a6d44acd9</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.hash.md5",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -10157,7 +10417,7 @@
   "fieldName" : "threat.indicator.file.x509.serial_number",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "threat.indicator.file.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -10437,7 +10697,7 @@
   "fieldName" : "threat.indicator.x509.serial_number",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "threat.indicator.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields to classify events and alerts according to a threat taxonomy.'>Threat</abbr>",
@@ -10702,7 +10962,7 @@
   "fieldName" : "tls.client.x509.serial_number",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "tls.client.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -10822,7 +11082,7 @@
   "fieldName" : "tls.server.x509.serial_number",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "tls.server.x509.signature_algorithm",
   "fieldSet" : "<abbr title='Fields describing a TLS connection.'>TLS</abbr>",
@@ -11204,6 +11464,86 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "<p>Optional VLAN name as reported by the observer.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">outside</code></p>"
 }, {
+  "fieldName" : "volume.bus_type",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Bus type of the device, such as <code class=\"literal\">Nvme</code>, <code class=\"literal\">Usb</code>, or <code class=\"literal\">FileBackedVirtual</code>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">FileBackedVirtual</code></p>"
+}, {
+  "fieldName" : "volume.default_access",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Describes the default access(es) of the volume.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.device_name",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Full path of the volume device.</p> <p>Only populate this field for POSIX system volumes.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.device_type",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Volume device type.</p> <p>The most frequently seen volume device types are <code class=\"literal\">Disk File System</code> and <code class=\"literal\">CD-ROM File System</code>.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CD-ROM File System</code></p>"
+}, {
+  "fieldName" : "volume.dos_name",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The MS-DOS name of a device.</p> <p>DOS device name is in the format of driver letters, such as <code class=\"literal\">C:</code>. The field is relevant to Windows systems only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">E:</code></p>"
+}, {
+  "fieldName" : "volume.file_system_type",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Volume device file system type.</p> <p>The most common volume file system types are <code class=\"literal\">NTFS</code> and <code class=\"literal\">UDF</code>.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.mount_name",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Mount name of the volume device.</p> <p>Only populate this field for POSIX system volumes.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.nt_name",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>The NT device name.</p> <p>NT device name uses a format of <code class=\"literal\">\\Device\\HarddiskVolume2</code>. The field is relevant to Windows systems only.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">\\Device\\Cdrom1</code></p>"
+}, {
+  "fieldName" : "volume.product_id",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>ProductID of the device.</p> <p>The vendor provides the ProductID for the volume, if any.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.product_name",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Product name of the volume.</p> <p>The volume device vendor provides this value.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Virtual DVD-ROM</code></p>"
+}, {
+  "fieldName" : "volume.removable",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Indicates if the volume is removable.</p> <p>type: boolean</p>"
+}, {
+  "fieldName" : "volume.serial_number",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Serial number identifier for the volume device.</p> <p>The serial number is provided by the vendor of the device, if any.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.size",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Size of the volume device in bytes.</p> <p>type: long</p>"
+}, {
+  "fieldName" : "volume.vendor_id",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>VendorID of the volume device.</p> <p>The volume device vendor provides this value.</p> <p>type: keyword</p>"
+}, {
+  "fieldName" : "volume.vendor_name",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Vendor name of the volume device.</p> <p>The value is provided by the vendor of the device.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">Msft</code></p>"
+}, {
+  "fieldName" : "volume.writable",
+  "fieldSet" : "<abbr title='Fields related to storage volume details.'>Volume</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<p>Indicates if the volume is writable.</p> <p>type: boolean</p>"
+}, {
   "fieldName" : "vulnerability.category",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
@@ -11227,7 +11567,7 @@
   "fieldName" : "vulnerability.id",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>The identification (ID) is the number portion of a vulnerability entry. It includes a unique identification number for the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#what_is_cve_id)\" class=\"ulink\" target=\"_blank\">Common Vulnerabilities and Exposure CVE ID</a></p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVE-2019-00001</code></p>"
+  "fieldDescription" : "<p>The identification (ID) is the number portion of a vulnerability entry. It includes a unique identification number for the vulnerability. For example (<a href=\"https://cve.mitre.org/about/faqs.html#what_is_cve_id\" class=\"ulink\" target=\"_blank\">Common Vulnerabilities and Exposure CVE ID</a>)</p> <p>type: keyword</p> <p>example: <code class=\"literal\">CVE-2019-00001</code></p>"
 }, {
   "fieldName" : "vulnerability.reference",
   "fieldSet" : "<abbr title='Fields to describe the vulnerability relevant to an event.'>Vulnerability</abbr>",
@@ -11342,7 +11682,7 @@
   "fieldName" : "x509.serial_number",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, if this value is alphanumeric, it should be formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
+  "fieldDescription" : "<p>Unique serial number issued by the certificate authority. For consistency, this should be encoded in base 16 and formatted without colons and uppercase characters.</p> <p>type: keyword</p> <p>example: <code class=\"literal\">55FBB9C7DEBF09809D12CCAA</code></p>"
 }, {
   "fieldName" : "x509.signature_algorithm",
   "fieldSet" : "<abbr title='These fields contain x509 certificate metadata.'>x509 Certificate</abbr>",

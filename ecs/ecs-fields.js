@@ -3,7 +3,7 @@ function initDataTable() {
 
     $("#ecs-fields").DataTable({
         "ajax": {
-            "url": "./ecs-fields.json?v=8.14",
+            "url": "./ecs-fields.json?v=8.16",
             "dataSrc": ""
         },
         "paging": true,
