@@ -289,6 +289,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
 }, {
+  "fieldName" : "client.user.entity.attributes",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "client.user.entity.behavior",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "client.user.entity.display_name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "client.user.entity.id",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "client.user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "client.user.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "client.user.entity.metrics",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "client.user.entity.name",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "client.user.entity.raw",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "client.user.entity.reference",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "client.user.entity.source",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "client.user.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "client.user.entity.type",
+  "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "client.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the client side of a network connection, used with server.'>Client</abbr>",
   "fieldLevel" : "extended",
@@ -423,6 +488,71 @@
   "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "The cloud service name is intended to distinguish services running on different platforms within a provider, eg AWS EC2 vs Lambda, GCP GCE vs App Engine, Azure VM vs App Server.\n<br>\n<br>\nExamples: app engine, app service, cloud run, fargate, lambda.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>lambda</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/equivalent-1ba9f5?style=flat\" alt=\"equivalent\" title=\"equivalent\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/cloud/#cloud-platform\" target=\"_blank\" rel=\"noopener noreferrer\">cloud.platform</a>"
+}, {
+  "fieldName" : "cloud.entity.attributes",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "cloud.entity.behavior",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "cloud.entity.display_name",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "cloud.entity.id",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "cloud.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "cloud.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "cloud.entity.metrics",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "cloud.entity.name",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "cloud.entity.raw",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "cloud.entity.reference",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "cloud.entity.source",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "cloud.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "cloud.entity.type",
+  "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "cloud.origin.account.id",
   "fieldSet" : "<abbr title='Fields about the cloud resource.'>Cloud</abbr>",
@@ -652,7 +782,7 @@
   "fieldName" : "container.runtime",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "Runtime managing this container.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>docker</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/container/#container-runtime\" target=\"_blank\" rel=\"noopener noreferrer\">container.runtime</a>"
+  "fieldDescription" : "Runtime managing this container.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>docker</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/equivalent-1ba9f5?style=flat\" alt=\"equivalent\" title=\"equivalent\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/container/#container-runtime-name\" target=\"_blank\" rel=\"noopener noreferrer\">container.runtime.name</a>"
 }, {
   "fieldName" : "container.security_context.privileged",
   "fieldSet" : "<abbr title='Fields describing the container that generated this event.'>Container</abbr>",
@@ -904,6 +1034,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
 }, {
+  "fieldName" : "destination.user.entity.attributes",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "destination.user.entity.behavior",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "destination.user.entity.display_name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "destination.user.entity.id",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "destination.user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "destination.user.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "destination.user.entity.metrics",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "destination.user.entity.name",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "destination.user.entity.raw",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "destination.user.entity.reference",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "destination.user.entity.source",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "destination.user.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "destination.user.entity.type",
+  "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "destination.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the destination side of a network connection, used with source.'>Destination</abbr>",
   "fieldLevel" : "extended",
@@ -1004,10 +1199,35 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "The human readable marketing name of the device model.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>Samsung Galaxy S6</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/device/#device-model-name\" target=\"_blank\" rel=\"noopener noreferrer\">device.model.name</a>"
 }, {
+  "fieldName" : "device.product.id",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A unique identifier assigned by the vendor to distinguish different product models. This is typically a hexadecimal value that, combined with the vendor ID, creates a globally unique device identifier.\n<br>\n<br>\nThe product ID is assigned by the device manufacturer and should remain consistent across all instances of the same product model. For hardware devices, this often corresponds to the Product ID (PID) in device descriptors.\n<br>\n<br>\nSee https://learn.microsoft.com/en-us/windows-hardware/drivers/install/standard-usb-identifiers for more details on product identification standards.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>43981</code>"
+}, {
+  "fieldName" : "device.product.name",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The human-readable marketing or commercial name of the device as designated by the manufacturer. This name is typically found in product documentation, marketing materials, or device packaging.\n<br>\n<br>\nUnlike the product.id which is a technical identifier, this field contains the consumer-facing product name that would be recognizable to end users. The name should be exactly as provided by the manufacturer and may include model numbers, series designations, or other identifying information.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>Extreme V2 SSD</code>"
+}, {
   "fieldName" : "device.serial_number",
   "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "<em>This field is beta and subject to change.</em> The unique serial number serves as a distinct identifier for each device, aiding in inventory management and device authentication.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>DJGAQS4CW5</code>"
+}, {
+  "fieldName" : "device.type",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A classification of the device based on its primary function or device class. This field categorizes devices into functional groups to enable policy enforcement and monitoring based on device capabilities.\n<br>\n<br>\nThe classification should follow standard device class definitions where possible, such as \"Storage Device\", \"Human Interface Device\", \"Audio\", \"Video\", \"Network\", \"Communication\", etc. This allows for consistent categorization across different device types and manufacturers.\n<br>\n<br>\nSee https://www.usb.org/defined-class-codes for standard device class definitions.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>Storage Device</code>"
+}, {
+  "fieldName" : "device.vendor.id",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A unique identifier assigned to device manufacturers by standards organizations. This is typically a hexadecimal value that uniquely identifies the vendor/manufacturer of the device.\n<br>\n<br>\nThe vendor ID is assigned by standards bodies and remains consistent across all products from the same manufacturer. For hardware devices, this often corresponds to the Vendor ID (VID) in device descriptors. This identifier enables tracking and policy enforcement at the manufacturer level.\n<br>\n<br>\nSee https://learn.microsoft.com/en-us/windows-hardware/drivers/install/standard-usb-identifiers for more information on vendor identification standards.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>4660</code>"
+}, {
+  "fieldName" : "device.vendor.name",
+  "fieldSet" : "<abbr title='Fields characterizing a (mobile) device a process or application is running on.'>Device</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the organization or company that manufactured or produced the device. This should be the official registered business name or commonly recognized brand name of the manufacturer.\n<br>\n<br>\nThe vendor name provides human-readable identification of the device manufacturer and should be consistent with the vendor.id field. This field is useful for reporting, device inventory management, and applying vendor-specific policies or security rules.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>SanDisk</code>"
 }, {
   "fieldName" : "dll.name",
   "fieldSet" : "<abbr title='These fields contain information about code libraries dynamically loaded into processes.'>DLL</abbr>",
@@ -1242,7 +1462,7 @@
   "fieldName" : "dns.answers",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "An array containing an object for each answer section returned by the server.\n<br>\n<br>\nThe main keys that should be present in these objects are defined by ECS. Records that have more information may contain more keys than what ECS defines.\n<br>\n<br>\nNot all DNS data sources give all details about DNS answers. At minimum, answer objects must contain the <code>data</code> key. If more information is available, map as much of it to ECS as possible, and add any additional fields to the answer objects as custom fields.\n<br>\n<br>\ntype: object\n<br>\n<br>\nNote: This field should contain an array of values."
+  "fieldDescription" : "An array containing an object for each answer section returned by the server.\n<br>\n<br>\nThe main keys that should be present in these objects are defined by ECS. Records that have more information may contain more keys than what ECS defines.\n<br>\n<br>\nNot all DNS data sources give all details about DNS answers. At minimum, answer objects must contain the <code>data</code> key. If more information is available, map as much of it to ECS as possible, and add any additional fields to the answer objects as custom fields.\n<br>\n<br>\ntype: object\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/related-efc20d?style=flat\" alt=\"related\" title=\"related\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/dns/#dns-answers\" target=\"_blank\" rel=\"noopener noreferrer\">dns.answers</a>"
 }, {
   "fieldName" : "dns.answers.class",
   "fieldSet" : "<abbr title='Fields describing DNS queries and answers.'>DNS</abbr>",
@@ -1659,6 +1879,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "TLSH hash.\n<br>\n<br>\ntype: keyword"
 }, {
+  "fieldName" : "entity.attributes",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "entity.behavior",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "entity.display_name",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "entity.id",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "entity.metrics",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "entity.name",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "entity.raw",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "entity.reference",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "entity.source",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "entity.sub_type",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "entity.type",
+  "fieldSet" : "<abbr title='Fields to describe various types of entities across IT environments.'>Entity</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "error.code",
   "fieldSet" : "<abbr title='Fields about errors of any kind.'>Error</abbr>",
   "fieldLevel" : "core",
@@ -1807,7 +2092,7 @@
   "fieldName" : "event.type",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
   "fieldLevel" : "core",
-  "fieldDescription" : "This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.\n<br>\n<br>\n<code>event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code>event.category</code> field values, enables filtering events down to a level appropriate for single visualization.\n<br>\n<br>\nThis field is an array. This will allow proper categorization of some events that fall in multiple event types.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\naccess, admin, allowed, change, connection, creation, deletion, denied, end, error, group, indicator, info, installation, protocol, start, user\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-event-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for event.type</a>\n<br>"
+  "fieldDescription" : "This is one of four ECS Categorization Fields, and indicates the third level in the ECS category hierarchy.\n<br>\n<br>\n<code>event.type</code> represents a categorization \"sub-bucket\" that, when used along with the <code>event.category</code> field values, enables filtering events down to a level appropriate for single visualization.\n<br>\n<br>\nThis field is an array. This will allow proper categorization of some events that fall in multiple event types.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\naccess, admin, allowed, change, connection, creation, deletion, denied, device, end, error, group, indicator, info, installation, protocol, start, user\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-event-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for event.type</a>\n<br>"
 }, {
   "fieldName" : "event.url",
   "fieldSet" : "<abbr title='Fields breaking down the event details.'>Event</abbr>",
@@ -2667,7 +2952,7 @@
   "fieldName" : "gen_ai.system",
   "fieldSet" : "<abbr title='Fields on Generative Artificial Intelligence (GenAI) Models requests and responses'>Gen AI</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "<em>This field is beta and subject to change.</em> The Generative AI product as identified by the client or server instrumentation.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>openai</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/gen-ai/#gen-ai-system\" target=\"_blank\" rel=\"noopener noreferrer\">gen_ai.system</a>"
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The Generative AI product as identified by the client or server instrumentation.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>openai</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/equivalent-1ba9f5?style=flat\" alt=\"equivalent\" title=\"equivalent\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/gen-ai/#gen-ai-provider-name\" target=\"_blank\" rel=\"noopener noreferrer\">gen_ai.provider.name</a>"
 }, {
   "fieldName" : "gen_ai.token.type",
   "fieldSet" : "<abbr title='Fields on Generative Artificial Intelligence (GenAI) Models requests and responses'>Gen AI</abbr>",
@@ -2822,7 +3107,7 @@
   "fieldName" : "host.cpu.usage",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1.\n<br>\n<br>\nScaling factor: 1000.\n<br>\n<br>\nFor example: For a two core host, this value should be the average of the two cores, between 0 and 1.\n<br>\n<br>\ntype: scaled_float\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.cpu.utilization+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">cpu.utilization</a>"
+  "fieldDescription" : "Percent CPU used which is normalized by the number of CPU cores and it ranges from 0 to 1.\n<br>\n<br>\nScaling factor: 1000.\n<br>\n<br>\nFor example: For a two core host, this value should be the average of the two cores, between 0 and 1.\n<br>\n<br>\ntype: scaled_float\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.system.cpu.utilization+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">system.cpu.utilization</a>"
 }, {
   "fieldName" : "host.disk.read.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2872,7 +3157,7 @@
   "fieldName" : "host.network.egress.packets",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "The number of packets (gauge) sent out on all network interfaces by the host since the last metric collection.\n<br>\n<br>\ntype: long\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.system.network.packets+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">system.network.packets</a>"
+  "fieldDescription" : "The number of packets (gauge) sent out on all network interfaces by the host since the last metric collection.\n<br>\n<br>\ntype: long\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.system.network.packet.count+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">system.network.packet.count</a>"
 }, {
   "fieldName" : "host.network.ingress.bytes",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2882,7 +3167,7 @@
   "fieldName" : "host.network.ingress.packets",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
-  "fieldDescription" : "The number of packets (gauge) received on all network interfaces by the host since the last metric collection.\n<br>\n<br>\ntype: long\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.system.network.packets+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">system.network.packets</a>"
+  "fieldDescription" : "The number of packets (gauge) received on all network interfaces by the host since the last metric collection.\n<br>\n<br>\ntype: long\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.system.network.packet.count+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">system.network.packet.count</a>"
 }, {
   "fieldName" : "host.pid_ns_ino",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -2898,6 +3183,71 @@
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "Seconds the host has been up.\n<br>\n<br>\ntype: long\n<br>\n<br>\nexample: <code>1325</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/metric-cb00cb?style=flat\" alt=\"metric\" title=\"metric\"></a> <a href=\"https://github.com/search?q=repo%3Aopen-telemetry%2Fsemantic-conventions+%22%3C%21--+semconv+metric.system.uptime+--%3E%22&amp;type=code\" target=\"_blank\" rel=\"noopener noreferrer\">system.uptime</a>"
+}, {
+  "fieldName" : "host.entity.attributes",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "host.entity.behavior",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "host.entity.display_name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "host.entity.id",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "host.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "host.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "host.entity.metrics",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "host.entity.name",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "host.entity.raw",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "host.entity.reference",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "host.entity.source",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "host.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "host.entity.type",
+  "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "host.geo.city_name",
   "fieldSet" : "<abbr title='Fields describing the relevant computing instance.'>Host</abbr>",
@@ -3629,6 +3979,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "Orchestrator cluster type (e.g. kubernetes, nomad or cloudfoundry).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>kubernetes</code>"
 }, {
+  "fieldName" : "orchestrator.entity.attributes",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "orchestrator.entity.behavior",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "orchestrator.entity.display_name",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "orchestrator.entity.id",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "orchestrator.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "orchestrator.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "orchestrator.entity.metrics",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "orchestrator.entity.name",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "orchestrator.entity.raw",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "orchestrator.entity.reference",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "orchestrator.entity.source",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "orchestrator.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "orchestrator.entity.type",
+  "fieldSet" : "<abbr title='Fields relevant to container orchestrators.'>Orchestrator</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "organization.id",
   "fieldSet" : "<abbr title='Fields describing the organization or company the event is associated with.'>Organization</abbr>",
   "fieldLevel" : "extended",
@@ -4143,6 +4558,71 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
+}, {
+  "fieldName" : "process.attested_user.entity.attributes",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.attested_user.entity.behavior",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.attested_user.entity.display_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.attested_user.entity.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.attested_user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "process.attested_user.entity.lifecycle",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.attested_user.entity.metrics",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.attested_user.entity.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.attested_user.entity.raw",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.attested_user.entity.reference",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.attested_user.entity.source",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.attested_user.entity.sub_type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "process.attested_user.entity.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "process.attested_user.group.domain",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -5208,6 +5688,71 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.attributes",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.behavior",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.display_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.lifecycle",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.metrics",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.raw",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.reference",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.source",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.sub_type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "process.entry_meta.source.user.entity.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "process.entry_meta.source.user.group.domain",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -6339,6 +6884,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
 }, {
+  "fieldName" : "process.real_user.entity.attributes",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.real_user.entity.behavior",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.real_user.entity.display_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.real_user.entity.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.real_user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "process.real_user.entity.lifecycle",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.real_user.entity.metrics",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.real_user.entity.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.real_user.entity.raw",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.real_user.entity.reference",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.real_user.entity.source",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.real_user.entity.sub_type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "process.real_user.entity.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "process.real_user.group.domain",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -6708,6 +7318,71 @@
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
+}, {
+  "fieldName" : "process.saved_user.entity.attributes",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.saved_user.entity.behavior",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.saved_user.entity.display_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.saved_user.entity.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.saved_user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "process.saved_user.entity.lifecycle",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.saved_user.entity.metrics",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.saved_user.entity.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.saved_user.entity.raw",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.saved_user.entity.reference",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.saved_user.entity.source",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.saved_user.entity.sub_type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "process.saved_user.entity.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "process.saved_user.group.domain",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
@@ -7419,6 +8094,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
 }, {
+  "fieldName" : "process.user.entity.attributes",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.user.entity.behavior",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.user.entity.display_name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.user.entity.id",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "process.user.entity.lifecycle",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.user.entity.metrics",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.user.entity.name",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "process.user.entity.raw",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "process.user.entity.reference",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.user.entity.source",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "process.user.entity.sub_type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "process.user.entity.type",
+  "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "process.user.group.domain",
   "fieldSet" : "<abbr title='These fields contain information about a process.'>Process</abbr>",
   "fieldLevel" : "extended",
@@ -7864,6 +8604,71 @@
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
 }, {
+  "fieldName" : "server.user.entity.attributes",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "server.user.entity.behavior",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "server.user.entity.display_name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "server.user.entity.id",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "server.user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "server.user.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "server.user.entity.metrics",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "server.user.entity.name",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "server.user.entity.raw",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "server.user.entity.reference",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "server.user.entity.source",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "server.user.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "server.user.entity.type",
+  "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
+}, {
   "fieldName" : "server.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the server side of a network connection, used with client.'>Server</abbr>",
   "fieldLevel" : "extended",
@@ -7998,6 +8803,71 @@
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
   "fieldLevel" : "core",
   "fieldDescription" : "Version of the service the data was collected from.\n<br>\n<br>\nThis allows to look at a data set only for a specific version of a service.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>3.2.4</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/service/#service-version\" target=\"_blank\" rel=\"noopener noreferrer\">service.version</a>"
+}, {
+  "fieldName" : "service.entity.attributes",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "service.entity.behavior",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "service.entity.display_name",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "service.entity.id",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "service.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "service.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "service.entity.metrics",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "service.entity.name",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "service.entity.raw",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "service.entity.reference",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "service.entity.source",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "service.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "service.entity.type",
+  "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "service.origin.address",
   "fieldSet" : "<abbr title='Fields describing the service for or from which the data was collected.'>Service</abbr>",
@@ -8338,6 +9208,71 @@
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
+}, {
+  "fieldName" : "source.user.entity.attributes",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "source.user.entity.behavior",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "source.user.entity.display_name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "source.user.entity.id",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "source.user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "source.user.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "source.user.entity.metrics",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "source.user.entity.name",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "source.user.entity.raw",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "source.user.entity.reference",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "source.user.entity.source",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "source.user.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "source.user.entity.type",
+  "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "source.user.group.domain",
   "fieldSet" : "<abbr title='Fields about the source side of a network connection, used with destination.'>Source</abbr>",
@@ -11338,6 +12273,71 @@
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
   "fieldLevel" : "extended",
   "fieldDescription" : "Array of user roles at the time of the event.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\nexample: <code>[\"kibana_admin\", \"reporting_user\"]</code>\n<br>\n<br>\n<img src=\"https://img.shields.io/badge/OpenTelemetry-4a5ca6?style=flat&amp;logo=opentelemetry\" alt=\"OTel Badge\" title=\"OTel Badge\"> <a href=\"/docs/reference/ecs/ecs-opentelemetry#ecs-opentelemetry-relation\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\"><img src=\"https://img.shields.io/badge/match-93c93e?style=flat\" alt=\"match\" title=\"match\"></a> <a href=\"https://opentelemetry.io/docs/specs/semconv/attributes-registry/user/#user-roles\" target=\"_blank\" rel=\"noopener noreferrer\">user.roles</a>"
+}, {
+  "fieldName" : "user.entity.attributes",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of static or semi-static attributes of the entity. Usually boolean or keyword field data types. Use this field set when you need to track static or semi-static characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "user.entity.behavior",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of ephemeral characteristics of the entity, derived from observed behaviors during a specific time period. Usually boolean field data type. Use this field set when you need to capture and track ephemeral characteristics of an entity for advanced searching, correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "user.entity.display_name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> An optional field used when a pretty name is desired for entity-centric operations. This field should not be used for correlation with <code>*.name</code> fields for entities with dedicated field sets (e.g., <code>host</code>).\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nMulti-fields:\n<br>\n<br>\n* entity.display_name.text (type: match_only_text)"
+}, {
+  "fieldName" : "user.entity.id",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "A unique identifier for the entity. When multiple identifiers exist, this should be the most stable and commonly used identifier that: 1) persists across the entity's lifecycle, 2) ensures uniqueness within its scope, 3) is commonly used for queries and correlation, and 4) is readily available in most observations (logs/events). For entities with dedicated field sets (e.g., host, user), this value should match the corresponding *.id field. Alternative identifiers (e.g., ARNs values in AWS, URLs) can be preserved in the raw field.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "user.entity.last_seen_timestamp",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Indicates the date/time when this entity was last \"seen,\" usually based upon the last event/log that is initiated by this entity.\n<br>\n<br>\ntype: date"
+}, {
+  "fieldName" : "user.entity.lifecycle",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A set of temporal characteristics of the entity. Usually date field data type. Use this field set when you need to track temporal characteristics of an entity for advanced searching and correlation of normalized values across different providers/sources and entity types.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "user.entity.metrics",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Field set for any fields containing numeric entity metrics. These use dynamic field data type mapping.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "user.entity.name",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The name of the entity. The keyword field enables exact matches for filtering and aggregations, while the text field enables full-text search. For entities with dedicated field sets (e.g., <code>host</code>), this field should mirrors the corresponding <em>.name value.\n <br>\n <br>type: keyword\n <br>\n <br>Multi-fields:\n <br>\n <br></em> entity.name.text (type: match_only_text)"
+}, {
+  "fieldName" : "user.entity.raw",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> Original, unmodified fields from the source system. Usually flattened field data type. While the attributes field should be used for normalized fields requiring advanced queries, this field preserves all source metadata with basic search capabilities.\n<br>\n<br>\ntype: object"
+}, {
+  "fieldName" : "user.entity.reference",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A URI, URL, or other direct reference to access or locate the entity in its source system. This could be an API endpoint, web console URL, or other addressable location. Format may vary by entity type and source system.\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "user.entity.source",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The module or integration that provided this entity data (similar to event.module).\n<br>\n<br>\ntype: keyword"
+}, {
+  "fieldName" : "user.entity.sub_type",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "extended",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> The specific type designation for the entity as defined by its provider or system. This field provides more granular classification than the type field. Examples: <code>aws_s3_bucket</code>, <code>gcp_cloud_storage_bucket</code>, <code>azure_blob_container</code> would all map to entity type <code>bucket</code>. <code>hardware</code> , <code>virtual</code> , <code>container</code> , <code>node</code> , <code>cloud_instance</code> would all map to entity type <code>host</code>.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nexample: <code>aws_s3_bucket</code>"
+}, {
+  "fieldName" : "user.entity.type",
+  "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
+  "fieldLevel" : "core",
+  "fieldDescription" : "<em>This field is beta and subject to change.</em> A standardized high-level classification of the entity. This provides a normalized way to group similar entities across different providers or systems. Example values: <code>bucket</code>, <code>database</code>, <code>container</code>, <code>function</code>, <code>queue</code>, <code>host</code>, <code>user</code>, <code>application</code>, <code>session</code>, etc.\n<br>\n<br>\ntype: keyword\n<br>\n<br>\nNote: This field should contain an array of values.\n<br>\n<br>\n<strong>Important:</strong> The field value must be one of the following:\n<br>\n<br>\nbucket, database, container, function, queue, host, user, application, service, session\n<br>\n<br>\nTo learn more about when to use which value, visit the page <a href=\"/docs/reference/ecs/ecs-allowed-values-entity-type\" hx-select-oob=\"#content-container,#toc-nav\" preload=\"mousedown\">allowed values for entity.type</a>\n<br>"
 }, {
   "fieldName" : "user.group.domain",
   "fieldSet" : "<abbr title='Fields to describe the user relevant to the event.'>User</abbr>",
